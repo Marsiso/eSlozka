@@ -20,68 +20,60 @@ public class PermissionDatabaseMappingConfiguration : ChangeTrackingEntityDataba
         builder.Property(permission => permission.Type).HasMaxLength(256);
         builder.Property(permission => permission.Value).HasMaxLength(256);
 
-        builder.HasData(new Permission[]
+        builder.HasData(new()
         {
-            new()
-            {
-                PermissionID = 1,
-                RoleID = 1,
-                Type = "Data",
-                Value = "Read",
-                DateCreated = DateTime.UtcNow,
-                DateUpdated = DateTime.UtcNow,
-                IsActive = true
-            },
-            new()
-            {
-                PermissionID = 2,
-                RoleID = 1,
-                Type = "Data",
-                Value = "Write",
-                DateCreated = DateTime.UtcNow,
-                DateUpdated = DateTime.UtcNow,
-                IsActive = true
-            },
-            new()
-            {
-                PermissionID = 3,
-                RoleID = 1,
-                Type = "Data",
-                Value = "Delete",
-                DateCreated = DateTime.UtcNow,
-                DateUpdated = DateTime.UtcNow,
-                IsActive = true
-            },
-            new()
-            {
-                PermissionID = 4,
-                RoleID = 2,
-                Type = "Data",
-                Value = "Read",
-                DateCreated = DateTime.UtcNow,
-                DateUpdated = DateTime.UtcNow,
-                IsActive = true
-            },
-            new()
-            {
-                PermissionID = 5,
-                RoleID = 2,
-                Type = "Data",
-                Value = "Write",
-                DateCreated = DateTime.UtcNow,
-                DateUpdated = DateTime.UtcNow,
-                IsActive = true
-            },
-            new()
-            {
-                PermissionID = 6,
-                RoleID = 3,
-                Type = "Data",
-                Value = "Read",
-                DateCreated = DateTime.UtcNow,
-                DateUpdated = DateTime.UtcNow,
-                IsActive = true
-            }
+            PermissionID = 1,
+            RoleID = 1,
+            Type = "Data",
+            Value = "Read",
+            DateCreated = DateTime.UtcNow,
+            DateUpdated = DateTime.UtcNow,
+            IsActive = true
+        }, new()
+        {
+            PermissionID = 2,
+            RoleID = 1,
+            Type = "Data",
+            Value = "Write",
+            DateCreated = DateTime.UtcNow,
+            DateUpdated = DateTime.UtcNow,
+            IsActive = true
+        }, new()
+        {
+            PermissionID = 3,
+            RoleID = 1,
+            Type = "Data",
+            Value = "Delete",
+            DateCreated = DateTime.UtcNow,
+            DateUpdated = DateTime.UtcNow,
+            IsActive = true
+        }, new()
+        {
+            PermissionID = 4,
+            RoleID = 2,
+            Type = "Data",
+            Value = "Read",
+            DateCreated = DateTime.UtcNow,
+            DateUpdated = DateTime.UtcNow,
+            IsActive = true
+        }, new()
+        {
+            PermissionID = 5,
+            RoleID = 2,
+            Type = "Data",
+            Value = "Write",
+            DateCreated = DateTime.UtcNow,
+            DateUpdated = DateTime.UtcNow,
+            IsActive = true
+        }, new()
+        {
+            PermissionID = 6,
+            RoleID = 3,
+            Type = "Data",
+            Value = "Read",
+            DateCreated = DateTime.UtcNow,
+            DateUpdated = DateTime.UtcNow,
+            IsActive = true
         });
     }
 }

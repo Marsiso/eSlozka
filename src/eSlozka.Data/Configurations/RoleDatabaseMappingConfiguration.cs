@@ -29,32 +29,27 @@ public class RoleDatabaseMappingConfiguration : ChangeTrackingEntityDatabaseMapp
             .IsRequired()
             .OnDelete(DeleteBehavior.NoAction);
 
-        builder.HasData(new Role[]
+        builder.HasData(new()
         {
-            new()
-            {
-                RoleID = 1,
-                Name = "Admin",
-                DateCreated = DateTime.UtcNow,
-                DateUpdated = DateTime.UtcNow,
-                IsActive = true
-            },
-            new()
-            {
-                RoleID = 2,
-                Name = "Manager",
-                DateCreated = DateTime.UtcNow,
-                DateUpdated = DateTime.UtcNow,
-                IsActive = true
-            },
-            new()
-            {
-                RoleID = 3,
-                Name = "Default",
-                DateCreated = DateTime.UtcNow,
-                DateUpdated = DateTime.UtcNow,
-                IsActive = true
-            },
+            RoleID = 1,
+            Name = "Admin",
+            DateCreated = DateTime.UtcNow,
+            DateUpdated = DateTime.UtcNow,
+            IsActive = true
+        }, new()
+        {
+            RoleID = 2,
+            Name = "Manager",
+            DateCreated = DateTime.UtcNow,
+            DateUpdated = DateTime.UtcNow,
+            IsActive = true
+        }, new()
+        {
+            RoleID = 3,
+            Name = "Default",
+            DateCreated = DateTime.UtcNow,
+            DateUpdated = DateTime.UtcNow,
+            IsActive = true
         });
     }
 }

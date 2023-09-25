@@ -1,3 +1,4 @@
+using eSlozka.Domain.Models.Mappings;
 using eSlozka.Web;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,7 @@ services.AddRazorPages();
 services.AddServerSideBlazor();
 
 services.AddServerlessDatabase(configuration, environment);
+services.AddAutoMapper(typeof(UserMappingConfiguration));
 
 var application = builder.Build();
 

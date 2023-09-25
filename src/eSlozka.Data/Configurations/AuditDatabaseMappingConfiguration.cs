@@ -1,5 +1,4 @@
-﻿using eSlozka.Data.Configurations.Common;
-using eSlozka.Domain.Models;
+﻿using eSlozka.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
