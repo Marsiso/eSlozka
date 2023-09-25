@@ -1,6 +1,7 @@
 ﻿using eSlozka.Data;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace eSlozka.Web;
 
@@ -23,6 +24,8 @@ public static class ConfigurationExtensions
         var contextOptions = configuration.GetSection(DataContextOptions.SectionName).Get<DataContextOptions>();
 
         ArgumentNullException.ThrowIfNull(contextOptions, nameof(contextOptions));
+
+        services.AddTransient<ISaveChangesInterceptor, AuditingSaveChangeInterceptor>();
 
         services.AddDbContextFactory<DataContext>(options =>
         {

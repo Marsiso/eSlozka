@@ -20,7 +20,7 @@ public class PermissionDatabaseMappingConfiguration : ChangeTrackingEntityDataba
         builder.Property(permission => permission.Type).HasMaxLength(256);
         builder.Property(permission => permission.Value).HasMaxLength(256);
 
-        builder.HasData(new()
+        builder.HasData(new Permission
         {
             PermissionID = 1,
             RoleID = 1,
@@ -29,7 +29,7 @@ public class PermissionDatabaseMappingConfiguration : ChangeTrackingEntityDataba
             DateCreated = DateTime.UtcNow,
             DateUpdated = DateTime.UtcNow,
             IsActive = true
-        }, new()
+        }, new Permission
         {
             PermissionID = 2,
             RoleID = 1,
@@ -38,7 +38,7 @@ public class PermissionDatabaseMappingConfiguration : ChangeTrackingEntityDataba
             DateCreated = DateTime.UtcNow,
             DateUpdated = DateTime.UtcNow,
             IsActive = true
-        }, new()
+        }, new Permission
         {
             PermissionID = 3,
             RoleID = 1,
@@ -47,7 +47,7 @@ public class PermissionDatabaseMappingConfiguration : ChangeTrackingEntityDataba
             DateCreated = DateTime.UtcNow,
             DateUpdated = DateTime.UtcNow,
             IsActive = true
-        }, new()
+        }, new Permission
         {
             PermissionID = 4,
             RoleID = 2,
@@ -56,7 +56,7 @@ public class PermissionDatabaseMappingConfiguration : ChangeTrackingEntityDataba
             DateCreated = DateTime.UtcNow,
             DateUpdated = DateTime.UtcNow,
             IsActive = true
-        }, new()
+        }, new Permission
         {
             PermissionID = 5,
             RoleID = 2,
@@ -65,7 +65,7 @@ public class PermissionDatabaseMappingConfiguration : ChangeTrackingEntityDataba
             DateCreated = DateTime.UtcNow,
             DateUpdated = DateTime.UtcNow,
             IsActive = true
-        }, new()
+        }, new Permission
         {
             PermissionID = 6,
             RoleID = 3,
