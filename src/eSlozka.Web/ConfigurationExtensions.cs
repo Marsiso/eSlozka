@@ -1,5 +1,7 @@
-﻿using eSlozka.Application.ViewModels;
+﻿using System.Globalization;
+using eSlozka.Application.ViewModels;
 using eSlozka.Data;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -79,5 +81,19 @@ public static class ConfigurationExtensions
             .WithScopedLifetime());
 
         return services;
+    }
+
+    public static WebApplication UseLocalizationResources(this WebApplication application)
+    {
+        var supportedCultures = new[] { new CultureInfo("en"), new CultureInfo("cs") };
+
+        application.UseRequestLocalization(new RequestLocalizationOptions
+        {
+            DefaultRequestCulture = new RequestCulture("en"),
+            SupportedCultures = supportedCultures,
+            SupportedUICultures = supportedCultures
+        });
+
+        return application;
     }
 }

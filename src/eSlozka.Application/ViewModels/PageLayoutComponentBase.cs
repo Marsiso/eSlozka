@@ -1,17 +1,21 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using Microsoft.AspNetCore.Components;
 
 namespace eSlozka.Application.ViewModels;
 
-public class PageComponentBase<TViewModel> : ComponentBase, IDisposable where TViewModel : ViewModelBase
+public class PageLayoutComponentBase<TViewModel> : LayoutComponentBase, IDisposable where TViewModel : ViewModelBase
 {
     [Inject] public required TViewModel Model { get; set; }
 
     public void Dispose()
     {
         Model.PropertyChanged -= OnModelPropertyChanged;
-        Model.Dispose();
         GC.SuppressFinalize(this);
+    }
+
+    public RenderFragment? GetChildren()
+    {
+        return Body;
     }
 
     protected override bool ShouldRender()
@@ -33,9 +37,9 @@ public class PageComponentBase<TViewModel> : ComponentBase, IDisposable where TV
 
     protected override Task OnAfterRenderAsync(bool firstRender)
     {
-        return firstRender
-            ? Model.OnViewModelAfterRender()
-            : base.OnAfterRenderAsync(firstRender);
+        if (firstRender) return Model.OnViewModelAfterRender();
+
+        return base.OnAfterRenderAsync(firstRender);
     }
 
     private async void OnModelPropertyChanged(object? sender, PropertyChangedEventArgs args)
