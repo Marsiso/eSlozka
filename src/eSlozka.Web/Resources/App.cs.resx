@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <root>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root" xmlns="">
-        <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
     </xsd:schema>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
@@ -15,29 +18,14 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="Home" xml:space="preserve">
-        <value>Domů</value>
-    </data>
-    <data name="MainLayoutLogin" xml:space="preserve">
-        <value>Přihlásit se</value>
-    </data>
-    <data name="MainLayoutLogout" xml:space="preserve">
-        <value>Odhlásit se</value>
-    </data>
-    <data name="MainLayoutEmail" xml:space="preserve">
-        <value>Email</value>
-    </data>
-    <data name="MainLayoutGivenName" xml:space="preserve">
-        <value>Jméno</value>
-    </data>
-    <data name="MainLayoutFamilyName" xml:space="preserve">
-        <value>Příjmení</value>
-    </data>
     <data name="MainLayoutFiles" xml:space="preserve">
         <value>Soubory</value>
     </data>
-    <data name="MainLayoutSharedWithMe" xml:space="preserve">
-        <value>Sdíleno se mnou</value>
+    <data name="MainLayoutAboutApplication" xml:space="preserve">
+        <value>O aplikaci</value>
+    </data>
+    <data name="MainLayoutAccount" xml:space="preserve">
+        <value>Účet</value>
     </data>
     <data name="MainLayoutBookmarks" xml:space="preserve">
         <value>Záložky</value>
@@ -45,43 +33,61 @@
     <data name="MainLayoutDeleted" xml:space="preserve">
         <value>Smazané</value>
     </data>
-    <data name="MainLayoutNotifications" xml:space="preserve">
-        <value>Notifikace</value>
+    <data name="MainLayoutHistory" xml:space="preserve">
+        <value>Historie</value>
     </data>
-    <data name="MainLayoutManageUsers" xml:space="preserve">
-        <value>Spravovat uživatele</value>
+    <data name="MainLayoutLogout" xml:space="preserve">
+        <value>Odhlásit se</value>
+    </data>
+    <data name="MainLayoutLogs" xml:space="preserve">
+        <value>Logy</value>
     </data>
     <data name="MainLayoutManageCodeLists" xml:space="preserve">
         <value>Spravovat výběrovníky</value>
     </data>
-    <data name="MainLayoutManageTasks" xml:space="preserve">
-        <value>Spravovat úlohy</value>
-    </data>
-    <data name="MainLayoutStatistics" xml:space="preserve">
-        <value>Statistika</value>
-    </data>
-    <data name="MainLayoutLogs" xml:space="preserve">
-        <value>Protokoly</value>
-    </data>
     <data name="MainLayoutManageRepository" xml:space="preserve">
         <value>Spravovat úložiště</value>
     </data>
-    <data name="MainLayoutAccount" xml:space="preserve">
-        <value>Účet</value>
+    <data name="MainLayoutManageTasks" xml:space="preserve">
+        <value>Spravovat úlohy</value>
+    </data>
+    <data name="MainLayoutManageUsers" xml:space="preserve">
+        <value>Spravovat uživatele</value>
+    </data>
+    <data name="MainLayoutNotifications" xml:space="preserve">
+        <value>Upozornění</value>
     </data>
     <data name="MainLayoutSettings" xml:space="preserve">
         <value>Nastavení</value>
     </data>
-    <data name="MainLayoutAboutApplication" xml:space="preserve">
-        <value>O aplikaci</value>
+    <data name="MainLayoutSharedWithMe" xml:space="preserve">
+        <value>Sdíleno se mnou</value>
     </data>
-    <data name="MainLayoutLanguage" xml:space="preserve">
-        <value>Jazyk</value>
+    <data name="MainLayoutStatistics" xml:space="preserve">
+        <value>Statistika</value>
     </data>
-    <data name="MainLayoutHistory" xml:space="preserve">
-        <value>Historie</value>
+    <data name="LoginFormRegisterButton" xml:space="preserve">
+        <value>Registrovat se</value>
     </data>
-    <data name="MainLayoutSelectLanguage" xml:space="preserve">
-        <value>Volba jazyku</value>
+    <data name="LoginFormPasswordInputShowPasswordAriaLabel" xml:space="preserve">
+        <value>Zobrazit heslo</value>
+    </data>
+    <data name="LoginFormPasswordInputPasswordRequiredError" xml:space="preserve">
+        <value>Povinné pole.</value>
+    </data>
+    <data name="LoginFormEmailInputPasswordRequiredError" xml:space="preserve">
+        <value>Povinné pole.</value>
+    </data>
+    <data name="LoginFormPasswordInputLabel" xml:space="preserve">
+        <value>Heslo</value>
+    </data>
+    <data name="LoginFormLoginButton" xml:space="preserve">
+        <value>Přihlásit se</value>
+    </data>
+    <data name="LoginFormEmailInputLabel" xml:space="preserve">
+        <value>Emailová adresa</value>
+    </data>
+    <data name="LoginFormTitle" xml:space="preserve">
+        <value>Přihlásit se</value>
     </data>
 </root>

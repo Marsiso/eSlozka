@@ -21,14 +21,14 @@ namespace eSlozka.Web.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class App_cs {
+    internal class App {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal App_cs() {
+        internal App() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace eSlozka.Web.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("eSlozka.Web.Resources.App.cs", typeof(App_cs).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("eSlozka.Web.Resources.App", typeof(App).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,7 +60,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emailová adresa.
+        ///   Looks up a localized string similar to Email.
         /// </summary>
         internal static string LoginFormEmailInputLabel {
             get {
@@ -69,7 +69,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Povinné pole..
+        ///   Looks up a localized string similar to Required field..
         /// </summary>
         internal static string LoginFormEmailInputPasswordRequiredError {
             get {
@@ -78,7 +78,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Přihlásit se.
+        ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string LoginFormLoginButton {
             get {
@@ -87,7 +87,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heslo.
+        ///   Looks up a localized string similar to Password.
         /// </summary>
         internal static string LoginFormPasswordInputLabel {
             get {
@@ -96,7 +96,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Povinné pole..
+        ///   Looks up a localized string similar to Required field..
         /// </summary>
         internal static string LoginFormPasswordInputPasswordRequiredError {
             get {
@@ -105,7 +105,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zobrazit heslo.
+        ///   Looks up a localized string similar to Show password.
         /// </summary>
         internal static string LoginFormPasswordInputShowPasswordAriaLabel {
             get {
@@ -114,7 +114,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Registrovat se.
+        ///   Looks up a localized string similar to Register.
         /// </summary>
         internal static string LoginFormRegisterButton {
             get {
@@ -123,7 +123,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Přihlásit se.
+        ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string LoginFormTitle {
             get {
@@ -132,7 +132,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O aplikaci.
+        ///   Looks up a localized string similar to About.
         /// </summary>
         internal static string MainLayoutAboutApplication {
             get {
@@ -141,7 +141,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Účet.
+        ///   Looks up a localized string similar to Account.
         /// </summary>
         internal static string MainLayoutAccount {
             get {
@@ -150,7 +150,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Záložky.
+        ///   Looks up a localized string similar to Boomarks.
         /// </summary>
         internal static string MainLayoutBookmarks {
             get {
@@ -159,7 +159,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Smazané.
+        ///   Looks up a localized string similar to Deleted.
         /// </summary>
         internal static string MainLayoutDeleted {
             get {
@@ -168,7 +168,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Soubory.
+        ///   Looks up a localized string similar to Files.
         /// </summary>
         internal static string MainLayoutFiles {
             get {
@@ -177,7 +177,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Historie.
+        ///   Looks up a localized string similar to History.
         /// </summary>
         internal static string MainLayoutHistory {
             get {
@@ -186,7 +186,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Odhlásit se.
+        ///   Looks up a localized string similar to Logout.
         /// </summary>
         internal static string MainLayoutLogout {
             get {
@@ -195,7 +195,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logy.
+        ///   Looks up a localized string similar to Logs.
         /// </summary>
         internal static string MainLayoutLogs {
             get {
@@ -204,7 +204,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spravovat výběrovníky.
+        ///   Looks up a localized string similar to Manage code lists.
         /// </summary>
         internal static string MainLayoutManageCodeLists {
             get {
@@ -213,7 +213,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spravovat úložiště.
+        ///   Looks up a localized string similar to Manage disk space.
         /// </summary>
         internal static string MainLayoutManageRepository {
             get {
@@ -222,7 +222,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spravovat úlohy.
+        ///   Looks up a localized string similar to Manage task.
         /// </summary>
         internal static string MainLayoutManageTasks {
             get {
@@ -231,7 +231,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spravovat uživatele.
+        ///   Looks up a localized string similar to Manage users.
         /// </summary>
         internal static string MainLayoutManageUsers {
             get {
@@ -240,7 +240,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upozornění.
+        ///   Looks up a localized string similar to Notifications.
         /// </summary>
         internal static string MainLayoutNotifications {
             get {
@@ -249,7 +249,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nastavení.
+        ///   Looks up a localized string similar to Settings.
         /// </summary>
         internal static string MainLayoutSettings {
             get {
@@ -258,7 +258,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sdíleno se mnou.
+        ///   Looks up a localized string similar to Shared with me.
         /// </summary>
         internal static string MainLayoutSharedWithMe {
             get {
@@ -267,7 +267,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Statistika.
+        ///   Looks up a localized string similar to Statistics.
         /// </summary>
         internal static string MainLayoutStatistics {
             get {

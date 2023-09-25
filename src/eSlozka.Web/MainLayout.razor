@@ -3,18 +3,18 @@
 
 @inject IStringLocalizer<App> Localizer
 
-<MudThemeProvider IsDarkMode="true"/>
+<MudThemeProvider IsDarkMode="false"/>
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
-<MudLayout>
+@*<MudLayout>
     <MudAppBar>
         <MudIconButton Edge="Edge.Start" Icon="@Icons.Material.Filled.Menu" OnClick="@Model.ToggleSidebar"/>
         <MudText Class="ml-3" Typo="Typo.h6">eSlozka</MudText>
         <MudSpacer/>
-        <MudMenu AnchorOrigin="Origin.BottomLeft" Variant="Variant.Text" TransformOrigin="Origin.BottomLeft" ActivationEvent="MouseEvent.LeftClick">
+        <MudMenu Variant="Variant.Text" AnchorOrigin="Origin.BottomLeft" TransformOrigin="Origin.BottomLeft">
             <ActivatorContent>
-                <MudAvatar Elevation="25" Rounded="true" Variant="Variant.Text"/>
+                <MudAvatar Rounded="true" Variant="Variant.Text"/>
             </ActivatorContent>
             <ChildContent>
                 <MudMenuItem Disabled="true" Icon="@Icons.Material.Filled.Person3">FirstName LastName</MudMenuItem>
@@ -59,4 +59,7 @@
             </MudContainer>
         </MudContainer>
     </MudMainContent>
-</MudLayout>
+</MudLayout>*@
+<MudOverlay DarkBackground="true" Visible="true">
+    @GetChildren()
+</MudOverlay>

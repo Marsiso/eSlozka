@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace eSlozka.Web.Resources.Localization {
+namespace eSlozka.Web.Resources {
     using System;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -21,16 +21,16 @@ namespace eSlozka.Web.Resources.Localization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Index_en {
-
+    internal class App_en {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Index_en() {
+        internal App_en() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -38,13 +38,13 @@ namespace eSlozka.Web.Resources.Localization {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Cloud.Web.Resources.Index.en", typeof(Index_en).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("eSlozka.Web.Resources.App.en", typeof(App_en).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -58,184 +58,220 @@ namespace eSlozka.Web.Resources.Localization {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to About application.
+        ///   Looks up a localized string similar to Emal.
         /// </summary>
-        internal static string About {
+        internal static string LoginFormEmailInputLabel {
             get {
-                return ResourceManager.GetString("About", resourceCulture);
+                return ResourceManager.GetString("LoginFormEmailInputLabel", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Account.
+        ///   Looks up a localized string similar to Required field..
         /// </summary>
-        internal static string Account {
+        internal static string LoginFormEmailInputPasswordRequiredError {
             get {
-                return ResourceManager.GetString("Account", resourceCulture);
+                return ResourceManager.GetString("LoginFormEmailInputPasswordRequiredError", resourceCulture);
             }
         }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Bookmarks.
-        /// </summary>
-        internal static string Bookmarks {
-            get {
-                return ResourceManager.GetString("Bookmarks", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Deleted.
-        /// </summary>
-        internal static string Deleted {
-            get {
-                return ResourceManager.GetString("Deleted", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Email.
-        /// </summary>
-        internal static string Email {
-            get {
-                return ResourceManager.GetString("Email", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Family name.
-        /// </summary>
-        internal static string FamilyName {
-            get {
-                return ResourceManager.GetString("FamilyName", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Files.
-        /// </summary>
-        internal static string Files {
-            get {
-                return ResourceManager.GetString("Files", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Given name.
-        /// </summary>
-        internal static string GivenName {
-            get {
-                return ResourceManager.GetString("GivenName", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Index.
-        /// </summary>
-        internal static string Index {
-            get {
-                return ResourceManager.GetString("Index", resourceCulture);
-            }
-        }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
-        internal static string Login {
+        internal static string LoginFormLoginButton {
             get {
-                return ResourceManager.GetString("Login", resourceCulture);
+                return ResourceManager.GetString("LoginFormLoginButton", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        internal static string LoginFormPasswordInputLabel {
+            get {
+                return ResourceManager.GetString("LoginFormPasswordInputLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required field..
+        /// </summary>
+        internal static string LoginFormPasswordInputPasswordRequiredError {
+            get {
+                return ResourceManager.GetString("LoginFormPasswordInputPasswordRequiredError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show password.
+        /// </summary>
+        internal static string LoginFormPasswordInputShowPasswordAriaLabel {
+            get {
+                return ResourceManager.GetString("LoginFormPasswordInputShowPasswordAriaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        internal static string LoginFormRegisterButton {
+            get {
+                return ResourceManager.GetString("LoginFormRegisterButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        internal static string LoginFormTitle {
+            get {
+                return ResourceManager.GetString("LoginFormTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        internal static string MainLayoutAboutApplication {
+            get {
+                return ResourceManager.GetString("MainLayoutAboutApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account.
+        /// </summary>
+        internal static string MainLayoutAccount {
+            get {
+                return ResourceManager.GetString("MainLayoutAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Boomarks.
+        /// </summary>
+        internal static string MainLayoutBookmarks {
+            get {
+                return ResourceManager.GetString("MainLayoutBookmarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deleted.
+        /// </summary>
+        internal static string MainLayoutDeleted {
+            get {
+                return ResourceManager.GetString("MainLayoutDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Files.
+        /// </summary>
+        internal static string MainLayoutFiles {
+            get {
+                return ResourceManager.GetString("MainLayoutFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to History.
+        /// </summary>
+        internal static string MainLayoutHistory {
+            get {
+                return ResourceManager.GetString("MainLayoutHistory", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Logout.
         /// </summary>
-        internal static string Logout {
+        internal static string MainLayoutLogout {
             get {
-                return ResourceManager.GetString("Logout", resourceCulture);
+                return ResourceManager.GetString("MainLayoutLogout", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Logs.
         /// </summary>
-        internal static string Logs {
+        internal static string MainLayoutLogs {
             get {
-                return ResourceManager.GetString("Logs", resourceCulture);
+                return ResourceManager.GetString("MainLayoutLogs", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Manage code lists.
         /// </summary>
-        internal static string ManageCodeLists {
+        internal static string MainLayoutManageCodeLists {
             get {
-                return ResourceManager.GetString("ManageCodeLists", resourceCulture);
+                return ResourceManager.GetString("MainLayoutManageCodeLists", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Manage repository.
+        ///   Looks up a localized string similar to Manage disk space.
         /// </summary>
-        internal static string ManageRepository {
+        internal static string MainLayoutManageRepository {
             get {
-                return ResourceManager.GetString("ManageRepository", resourceCulture);
+                return ResourceManager.GetString("MainLayoutManageRepository", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Manage tasks.
+        ///   Looks up a localized string similar to Manage task.
         /// </summary>
-        internal static string ManageTasks {
+        internal static string MainLayoutManageTasks {
             get {
-                return ResourceManager.GetString("ManageTasks", resourceCulture);
+                return ResourceManager.GetString("MainLayoutManageTasks", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Manage users.
         /// </summary>
-        internal static string ManageUsers {
+        internal static string MainLayoutManageUsers {
             get {
-                return ResourceManager.GetString("ManageUsers", resourceCulture);
+                return ResourceManager.GetString("MainLayoutManageUsers", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Notifications.
         /// </summary>
-        internal static string Notifications {
+        internal static string MainLayoutNotifications {
             get {
-                return ResourceManager.GetString("Notifications", resourceCulture);
+                return ResourceManager.GetString("MainLayoutNotifications", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
-        internal static string Settings {
+        internal static string MainLayoutSettings {
             get {
-                return ResourceManager.GetString("Settings", resourceCulture);
+                return ResourceManager.GetString("MainLayoutSettings", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Shared with me.
         /// </summary>
-        internal static string Shared_with_me {
+        internal static string MainLayoutSharedWithMe {
             get {
-                return ResourceManager.GetString("Shared with me", resourceCulture);
+                return ResourceManager.GetString("MainLayoutSharedWithMe", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Statistics.
         /// </summary>
-        internal static string Statistics {
+        internal static string MainLayoutStatistics {
             get {
-                return ResourceManager.GetString("Statistics", resourceCulture);
+                return ResourceManager.GetString("MainLayoutStatistics", resourceCulture);
             }
         }
     }
