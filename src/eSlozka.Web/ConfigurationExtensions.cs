@@ -1,4 +1,5 @@
-﻿using eSlozka.Data;
+﻿using eSlozka.Application.ViewModels;
+using eSlozka.Data;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -67,5 +68,16 @@ public static class ConfigurationExtensions
         }
 
         return application;
+    }
+
+    public static IServiceCollection AddViewModels(this IServiceCollection services)
+    {
+        services.Scan(scan => scan
+            .FromAssemblyOf<ViewModelBase>()
+            .AddClasses(classes => classes.AssignableTo<ViewModelBase>())
+            .AsSelf()
+            .WithScopedLifetime());
+
+        return services;
     }
 }

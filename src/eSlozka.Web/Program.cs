@@ -14,6 +14,7 @@ services.AddServerSideBlazor();
 
 services.AddServerlessDatabase(configuration, environment);
 services.AddAutoMapper(typeof(UserMappingConfiguration));
+services.AddViewModels();
 
 var application = builder.Build();
 

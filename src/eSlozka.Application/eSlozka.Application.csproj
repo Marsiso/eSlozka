@@ -10,4 +10,5 @@
         <ProjectReference Include="..\eSlozka.Core\eSlozka.Core.csproj"/>
     </ItemGroup>
 
+
 </Project>
