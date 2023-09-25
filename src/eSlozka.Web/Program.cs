@@ -1,9 +1,23 @@
+using eSlozka.Domain.Models.Mappings;
+using eSlozka.Web;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddRazorPages();
-builder.Services.AddServerSideBlazor();
+var services = builder.Services;
+var configuration = builder.Configuration;
+var environment = builder.Environment;
+
+services.AddSingleton<IConfiguration>(configuration);
+
+services.AddRazorPages();
+services.AddServerSideBlazor();
+
+services.AddServerlessDatabase(configuration, environment);
+services.AddAutoMapper(typeof(UserMappingConfiguration));
 
 var application = builder.Build();
+
+application.UseServerlessDatabaseAutoMigration();
 
 if (!application.Environment.IsDevelopment()) application.UseHsts();
 
