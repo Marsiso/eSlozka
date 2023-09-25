@@ -16,5 +16,6 @@ public class User : ChangeTrackingEntity
     public bool DarkThemeEnabled { get; set; }
     public bool Verified { get; set; }
 
-    public Folder? RootFolder { get; set; }
+    public ICollection<UserRole>? Roles { get; set; }
+    public ICollection<Folder>? Folders { get; set; }
 }

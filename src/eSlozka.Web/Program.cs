@@ -1,9 +1,21 @@
+using eSlozka.Web;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddRazorPages();
-builder.Services.AddServerSideBlazor();
+var services = builder.Services;
+var configuration = builder.Configuration;
+var environment = builder.Environment;
+
+services.AddSingleton<IConfiguration>(configuration);
+
+services.AddRazorPages();
+services.AddServerSideBlazor();
+
+services.AddServerlessDatabase(configuration, environment);
 
 var application = builder.Build();
+
+application.UseServerlessDatabaseAutoMigration();
 
 if (!application.Environment.IsDevelopment()) application.UseHsts();
 

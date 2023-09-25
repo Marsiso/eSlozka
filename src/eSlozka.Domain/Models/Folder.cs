@@ -15,5 +15,6 @@ public class Folder : ChangeTrackingEntity
     public User? User { get; set; }
     public Folder? Parent { get; set; }
     public CodeListItem? Category { get; set; }
+    public ICollection<File>? Files { get; set; }
     public ICollection<Folder>? Children { get; set; }
 }
