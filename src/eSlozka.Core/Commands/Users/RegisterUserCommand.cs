@@ -33,6 +33,5 @@ public record struct RegisterUserResult(RegisterUserResultType Result, User? Use
 public enum RegisterUserResultType
 {
     Succeeded,
-    Failed,
-    ValidationFailed
+    Failed
 }
