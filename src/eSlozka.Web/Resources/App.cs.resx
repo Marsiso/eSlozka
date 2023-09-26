@@ -135,4 +135,7 @@
     <data name="RegisterFormRegisterButton" xml:space="preserve">
         <value>Registrovat se</value>
     </data>
+    <data name="LogoutFormLogoutButton" xml:space="preserve">
+        <value>Odhlásit se</value>
+    </data>
 </root>

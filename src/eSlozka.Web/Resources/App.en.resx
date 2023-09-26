@@ -135,4 +135,7 @@
     <data name="RegisterFormRegisterButton" xml:space="preserve">
         <value>Register</value>
     </data>
+    <data name="LogoutFormLogoutButton" xml:space="preserve">
+        <value>Logout</value>
+    </data>
 </root>

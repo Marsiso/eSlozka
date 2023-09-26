@@ -132,6 +132,15 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Logout.
+        /// </summary>
+        internal static string LogoutFormLogoutButton {
+            get {
+                return ResourceManager.GetString("LogoutFormLogoutButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         internal static string MainLayoutAboutApplication {
