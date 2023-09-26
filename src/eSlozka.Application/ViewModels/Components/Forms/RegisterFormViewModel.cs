@@ -1,11 +1,21 @@
-﻿using eSlozka.Domain.DataTransferObjects.Forms;
+﻿using AutoMapper;
+using eSlozka.Core.Commands.Users;
+using eSlozka.Domain.DataTransferObjects.Forms;
+using eSlozka.Domain.Exceptions;
+using MediatR;
+using Microsoft.AspNetCore.Components;
 using MudBlazor;
 
 namespace eSlozka.Application.ViewModels.Components.Forms;
 
 public class RegisterFormViewModel : ViewModelBase
 {
+    private readonly IMapper _mapper;
+    private readonly NavigationManager _navigation;
+    private readonly ISender _sender;
+
     private RegisterForm _form = new();
+
     private bool _hasMobileDeviceViewPortWidth;
     private string _passwordInputIcon = Icons.Material.Filled.VisibilityOff;
     private bool _passwordInputShowPassword;
@@ -13,6 +23,14 @@ public class RegisterFormViewModel : ViewModelBase
     private string _passwordRepeatInputIcon = Icons.Material.Filled.VisibilityOff;
     private bool _passwordRepeatInputShowPassword;
     private InputType _passwordRepeatInputType = InputType.Password;
+    private EntityValidationException? _validationException;
+
+    public RegisterFormViewModel(ISender sender, NavigationManager navigation, IMapper mapper)
+    {
+        _sender = sender;
+        _navigation = navigation;
+        _mapper = mapper;
+    }
 
     public RegisterForm Form
     {
@@ -62,6 +80,12 @@ public class RegisterFormViewModel : ViewModelBase
         set => SetValue(ref _hasMobileDeviceViewPortWidth, value);
     }
 
+    public EntityValidationException? ValidationException
+    {
+        get => _validationException;
+        set => SetValue(ref _validationException, value);
+    }
+
     public void OnPasswordInputShowPasswordClick()
     {
         if (PasswordInputShowPassword)
@@ -97,5 +121,35 @@ public class RegisterFormViewModel : ViewModelBase
     public string GetComponentWidth()
     {
         return HasMobileDeviceViewPortWidth ? "min-width: 100vw; min-height: 100vh;" : "min-width: 30rem; max-width: 30rem;";
+    }
+
+    public async Task OnRegisterButtonClick()
+    {
+        var registerCommand = _mapper.Map<RegisterCommand>(Form);
+        var result = await _sender.Send(registerCommand);
+
+        if (result.Result == RegisterResultType.Succeeded) _navigation.NavigateTo("/", true);
+
+        ValidationException = result.ValidationException;
+    }
+
+    public void OnLoginButtonClick()
+    {
+        _navigation.NavigateTo("/");
+    }
+
+    public bool HasError(string propertyName)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(propertyName);
+
+        return ValidationException?.ValidationErrors.ContainsKey(propertyName) ?? false;
+    }
+
+    public string GetErrorText(string propertyName)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(propertyName);
+
+        if (HasError(propertyName)) return ValidationException?.ValidationErrors[propertyName].FirstOrDefault() ?? string.Empty;
+        return string.Empty;
     }
 }

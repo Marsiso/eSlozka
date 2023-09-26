@@ -15,8 +15,6 @@
             <MudText Color="Color.Surface" Typo="Typo.h5">@Localizer["RegisterFormTitle"]</MudText>
         </MudCardHeader>
         <MudCardContent Class="pa-8">
-            <!-- TODO: Add debounce. -->
-            <!-- TODO: Add validation. -->
             <MudTextField @bind-Value="Model.Form.GivenName"
                           For="@(() => Model.Form.GivenName)"
                           Immediate="true"
@@ -24,11 +22,10 @@
                           Label="@Localizer["RegisterFormGivenNameInputLabel"]"
                           MaxLength="256"
                           Placeholder="Peter"
-                          Required="true"
-                          RequiredError="@Localizer["RegisterFormGivenNameInputRequiredError"]"/>
+                          DebounceInterval="500"
+                          Error="@Model.HasError(nameof(Model.Form.GivenName))"
+                          ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.GivenName))]"/>
 
-            <!-- TODO: Add debounce. -->
-            <!-- TODO: Add validation. -->
             <MudTextField @bind-Value="Model.Form.FamilyName"
                           For="@(() => Model.Form.FamilyName)"
                           Immediate="true"
@@ -36,11 +33,10 @@
                           Label="@Localizer["RegisterFormFamilyNameInputLabel"]"
                           MaxLength="256"
                           Placeholder="Novotný"
-                          Required="true"
-                          RequiredError="@Localizer["RegisterFormFamilyNameInputRequiredError"]"/>
+                          DebounceInterval="500"
+                          Error="@Model.HasError(nameof(Model.Form.FamilyName))"
+                          ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.FamilyName))]"/>
 
-            <!-- TODO: Add debounce. -->
-            <!-- TODO: Add validation. -->
             <MudTextField @bind-Value="Model.Form.Email"
                           For="@(() => Model.Form.Email)"
                           Immediate="true"
@@ -48,11 +44,10 @@
                           Label="@Localizer["RegisterFormEmailInputLabel"]"
                           MaxLength="256"
                           Placeholder="peter.novotny@centrum.cz"
-                          Required="true"
-                          RequiredError="@Localizer["RegisterFormEmailInputRequiredError"]"/>
+                          DebounceInterval="500"
+                          Error="@Model.HasError(nameof(Model.Form.Email))"
+                          ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.Email))]"/>
 
-            <!-- TODO: Add debounce. -->
-            <!-- TODO: Add validation. -->
             <MudTextField Adornment="Adornment.End"
                           AdornmentAriaLabel="@Localizer["RegisterFormPasswordInputShowPasswordAriaLabel"]"
                           AdornmentIcon="@Model.PasswordInputIcon"
@@ -63,11 +58,10 @@
                           Label="@Localizer["RegisterFormPasswordInputLabel"]"
                           MaxLength="256"
                           OnAdornmentClick="@Model.OnPasswordInputShowPasswordClick"
-                          Required="true"
-                          RequiredError="@Localizer["RegisterFormPasswordInputRequiredError"]"/>
+                          DebounceInterval="500"
+                          Error="@Model.HasError(nameof(Model.Form.Password))"
+                          ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.Password))]"/>
 
-            <!-- TODO: Add debounce. -->
-            <!-- TODO: Add validation. -->
             <MudTextField Adornment="Adornment.End"
                           AdornmentAriaLabel="@Localizer["RegisterFormPasswordRepeatInputShowPasswordAriaLabel"]"
                           AdornmentIcon="@Model.PasswordInputIcon"
@@ -78,12 +72,13 @@
                           Label="@Localizer["RegisterFormPasswordRepeatInputLabel"]"
                           MaxLength="256"
                           OnAdornmentClick="@Model.OnPasswordRepeatInputShowPasswordClick"
-                          Required="true"
-                          RequiredError="@Localizer["RegisterFormPasswordRepeatInputRequiredError"]"/>
+                          DebounceInterval="500"
+                          Error="@Model.HasError(nameof(Model.Form.PasswordRepeat))"
+                          ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.PasswordRepeat))]"/>
         </MudCardContent>
         <MudCardActions Class="px-8 pb-8">
             <MudStack Class="flex flex-grow-1" Justify="Justify.FlexEnd" Row="true">
-                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Filled">@Localizer["RegisterFormRegisterButton"]</MudButton>
+                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Filled" OnClick="@Model.OnRegisterButtonClick">@Localizer["RegisterFormRegisterButton"]</MudButton>
                 <MudButton ButtonType="ButtonType.Button" Variant="Variant.Text">@Localizer["RegisterFormLoginButton"]</MudButton>
             </MudStack>
         </MudCardActions>

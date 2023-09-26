@@ -138,4 +138,40 @@
     <data name="LogoutFormLogoutButton" xml:space="preserve">
         <value>Logout</value>
     </data>
+    <data name="ValidationUserGivenNameRequired" xml:space="preserve">
+        <value>Required field.</value>
+    </data>
+    <data name="ValidationUserGivenNameMaxLength" xml:space="preserve">
+        <value>Given name must be at most 256 characters long.</value>
+    </data>
+    <data name="ValidationUserFamilyNameRequired" xml:space="preserve">
+        <value>Required field.</value>
+    </data>
+    <data name="ValidationUserFamilyNameMaxLength" xml:space="preserve">
+        <value>Family name must be at most 256 characters long.</value>
+    </data>
+    <data name="ValidationUserEmailRequired" xml:space="preserve">
+        <value>Required field.</value>
+    </data>
+    <data name="ValidationUserEmailMaxLength" xml:space="preserve">
+        <value>Email must be at most 256 characters long.</value>
+    </data>
+    <data name="ValidationUserEmailInvalidFormat" xml:space="preserve">
+        <value>Email has invalid format.</value>
+    </data>
+    <data name="ValidationUserPasswordRequired" xml:space="preserve">
+        <value>Required field.</value>
+    </data>
+    <data name="ValidationUserPasswordMaxLength" xml:space="preserve">
+        <value>Password must be at most 256 characters long.</value>
+    </data>
+    <data name="ValidationUserPasswordRepetitionRequired" xml:space="preserve">
+        <value>Required field.</value>
+    </data>
+    <data name="ValidationUserPasswordRepetitionMaxLength" xml:space="preserve">
+        <value>Password repetition must be at most 256 characters long.</value>
+    </data>
+    <data name="ValidationUserPasswordRepetitionDoesNotMatch" xml:space="preserve">
+        <value>Password and its repetion must match.</value>
+    </data>
 </root>

@@ -1,6 +1,11 @@
 ﻿using System.Globalization;
+using eSlozka.Application.Validations.Users;
 using eSlozka.Application.ViewModels;
+using eSlozka.Core.Commands.Users;
+using eSlozka.Core.Utilities;
 using eSlozka.Data;
+using eSlozka.Domain.Services;
+using FluentValidation;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
@@ -95,5 +100,32 @@ public static class ConfigurationExtensions
         });
 
         return application;
+    }
+
+    public static IServiceCollection AddValidations(this IServiceCollection services)
+    {
+        services.AddValidatorsFromAssembly(typeof(RegisterCommandValidator).Assembly);
+
+        return services;
+    }
+
+    public static IServiceCollection AddCqrs(this IServiceCollection services)
+    {
+        services.AddMediatR(options =>
+        {
+            options.Lifetime = ServiceLifetime.Scoped;
+            options.RegisterServicesFromAssembly(typeof(RegisterCommandHandler).Assembly);
+        });
+
+        return services;
+    }
+
+    public static IServiceCollection AddUtilities(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddOptions<HashProviderOptions>();
+        services.AddSingleton<HashProvider>();
+        services.AddSingleton<IHashProvider, HashProvider>();
+
+        return services;
     }
 }

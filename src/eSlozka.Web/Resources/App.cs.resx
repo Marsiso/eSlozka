@@ -112,7 +112,7 @@
         <value>Povinné pole.</value>
     </data>
     <data name="RegisterFormEmailInputLabel" xml:space="preserve">
-        <value>Emailov8 adresa.</value>
+        <value>Emailová adresa.</value>
     </data>
     <data name="RegisterFormFamilyNameInputLabel" xml:space="preserve">
         <value>Příjmení</value>
@@ -137,5 +137,41 @@
     </data>
     <data name="LogoutFormLogoutButton" xml:space="preserve">
         <value>Odhlásit se</value>
+    </data>
+    <data name="ValidationUserPasswordRepetitionDoesNotMatch" xml:space="preserve">
+        <value>Hesla se musí shodovat.</value>
+    </data>
+    <data name="ValidationUserPasswordMaxLength" xml:space="preserve">
+        <value>Heslo může být nejvýše 256 znaků dlouhé.</value>
+    </data>
+    <data name="ValidationUserFamilyNameMaxLength" xml:space="preserve">
+        <value>Příjmění může být nejvýše 256 znaků dlouhé.</value>
+    </data>
+    <data name="ValidationUserEmailMaxLength" xml:space="preserve">
+        <value>Emailová adresa může být nejvýše 256 znaků dlouhé.</value>
+    </data>
+    <data name="ValidationUserPasswordRepetitionMaxLength" xml:space="preserve">
+        <value>Opakování hesla může být nejvýše 256 znaků dlouhé.</value>
+    </data>
+    <data name="ValidationUserPasswordRepetitionRequired" xml:space="preserve">
+        <value>Povinné pole.</value>
+    </data>
+    <data name="ValidationUserPasswordRequired" xml:space="preserve">
+        <value>Povinné pole.</value>
+    </data>
+    <data name="ValidationUserGivenNameRequired" xml:space="preserve">
+        <value>Povinné pole.</value>
+    </data>
+    <data name="ValidationUserFamilyNameRequired" xml:space="preserve">
+        <value>Povinné pole.</value>
+    </data>
+    <data name="ValidationUserEmailInvalidFormat" xml:space="preserve">
+        <value>Emailová adresa má neplatný formát.</value>
+    </data>
+    <data name="ValidationUserEmailRequired" xml:space="preserve">
+        <value>Povinné pole.</value>
+    </data>
+    <data name="ValidationUserGivenNameMaxLength" xml:space="preserve">
+        <value>Jméno může být nejvýše 256 znaků dlouhé.</value>
     </data>
 </root>

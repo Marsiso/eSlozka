@@ -15,7 +15,6 @@
             <MudText Color="Color.Surface" Typo="Typo.h5">@Localizer["LoginFormTitle"]</MudText>
         </MudCardHeader>
         <MudCardContent Class="pa-8">
-            <!-- TODO: Add debounce. -->
             <!-- TODO: Add validation. -->
             <MudTextField @bind-Value="Model.Form.Email"
                           For="@(() => Model.Form.Email)"
@@ -25,9 +24,9 @@
                           MaxLength="256"
                           Placeholder="peter.novotny@centrum.cz"
                           Required="true"
-                          RequiredError="@Localizer["LoginFormEmailInputPasswordRequiredError"]"/>
+                          RequiredError="@Localizer["LoginFormEmailInputPasswordRequiredError"]"
+                          DebounceInterval="500"/>
 
-            <!-- TODO: Add debounce. -->
             <!-- TODO: Add validation. -->
             <MudTextField Adornment="Adornment.End"
                           AdornmentAriaLabel="@Localizer["LoginFormPasswordInputShowPasswordAriaLabel"]"
@@ -40,7 +39,8 @@
                           MaxLength="256"
                           OnAdornmentClick="@Model.OnPasswordInputShowPasswordClick"
                           Required="true"
-                          RequiredError="@Localizer["LoginFormPasswordInputPasswordRequiredError"]"/>
+                          RequiredError="@Localizer["LoginFormPasswordInputPasswordRequiredError"]"
+                          DebounceInterval="500"/>
         </MudCardContent>
         <MudCardActions Class="px-8 pb-8">
             <MudStack Class="flex flex-grow-1" Justify="Justify.FlexEnd" Row="true">

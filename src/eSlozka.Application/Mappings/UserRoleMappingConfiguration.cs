@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
+using eSlozka.Domain.Models;
 
-namespace eSlozka.Domain.Models.Mappings;
+namespace eSlozka.Application.Mappings;
 
 public class UserRoleMappingConfiguration : Profile
 {

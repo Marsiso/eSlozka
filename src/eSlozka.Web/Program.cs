@@ -1,4 +1,4 @@
-using eSlozka.Domain.Models.Mappings;
+using eSlozka.Application.Mappings;
 using eSlozka.Web;
 using MudBlazor.Services;
 
@@ -20,6 +20,9 @@ services.AddServerlessDatabase(configuration, environment);
 services.AddAutoMapper(typeof(UserMappingConfiguration));
 services.AddViewModels();
 services.AddMudServices();
+services.AddValidations();
+services.AddCqrs();
+services.AddUtilities(configuration);
 
 var application = builder.Build();
 

@@ -17,7 +17,7 @@ public class HashProvider : IHashProvider
 
     public (string, string) GetHash(string value)
     {
-        ArgumentException.ThrowIfNullOrEmpty(value);
+        ArgumentException.ThrowIfNullOrEmpty(value, nameof(value));
 
         var pepperedValue = value + Options.Pepper;
 
@@ -35,9 +35,9 @@ public class HashProvider : IHashProvider
 
     public HashVerificationResult VerifyHash(string value, string base64Key, string base64Salt)
     {
-        ArgumentException.ThrowIfNullOrEmpty(value);
-        ArgumentException.ThrowIfNullOrEmpty(base64Key);
-        ArgumentException.ThrowIfNullOrEmpty(base64Salt);
+        ArgumentException.ThrowIfNullOrEmpty(value, nameof(value));
+        ArgumentException.ThrowIfNullOrEmpty(base64Key, nameof(base64Key));
+        ArgumentException.ThrowIfNullOrEmpty(base64Salt, nameof(base64Salt));
 
         var pepperedValue = value + Options.Pepper;
 

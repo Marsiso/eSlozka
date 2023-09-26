@@ -3,7 +3,7 @@ using eSlozka.Domain.Extensions;
 using FluentValidation;
 using MediatR;
 
-namespace Cloud.Application.Validations;
+namespace eSlozka.Application.Validations;
 
 public class FluentValidationPipelineBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
 {

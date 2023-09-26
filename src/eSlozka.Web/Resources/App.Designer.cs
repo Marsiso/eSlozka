@@ -418,5 +418,113 @@ namespace eSlozka.Web.Resources {
                 return ResourceManager.GetString("RegisterFormTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email has invalid format..
+        /// </summary>
+        internal static string ValidationUserEmailInvalidFormat {
+            get {
+                return ResourceManager.GetString("ValidationUserEmailInvalidFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email must be at most 256 characters long..
+        /// </summary>
+        internal static string ValidationUserEmailMaxLength {
+            get {
+                return ResourceManager.GetString("ValidationUserEmailMaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required field..
+        /// </summary>
+        internal static string ValidationUserEmailRequired {
+            get {
+                return ResourceManager.GetString("ValidationUserEmailRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Family name must be at most 256 characters long..
+        /// </summary>
+        internal static string ValidationUserFamilyNameMaxLength {
+            get {
+                return ResourceManager.GetString("ValidationUserFamilyNameMaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required field..
+        /// </summary>
+        internal static string ValidationUserFamilyNameRequired {
+            get {
+                return ResourceManager.GetString("ValidationUserFamilyNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given name must be at most 256 characters long..
+        /// </summary>
+        internal static string ValidationUserGivenNameMaxLength {
+            get {
+                return ResourceManager.GetString("ValidationUserGivenNameMaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required field..
+        /// </summary>
+        internal static string ValidationUserGivenNameRequired {
+            get {
+                return ResourceManager.GetString("ValidationUserGivenNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password must be at most 256 characters long..
+        /// </summary>
+        internal static string ValidationUserPasswordMaxLength {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordMaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password and its repetion must match..
+        /// </summary>
+        internal static string ValidationUserPasswordRepetitionDoesNotMatch {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordRepetitionDoesNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password repetition must be at most 256 characters long..
+        /// </summary>
+        internal static string ValidationUserPasswordRepetitionMaxLength {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordRepetitionMaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required field..
+        /// </summary>
+        internal static string ValidationUserPasswordRepetitionRequired {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordRepetitionRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required field..
+        /// </summary>
+        internal static string ValidationUserPasswordRequired {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordRequired", resourceCulture);
+            }
+        }
     }
 }

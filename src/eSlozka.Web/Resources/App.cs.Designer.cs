@@ -285,7 +285,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emailov8 adresa..
+        ///   Looks up a localized string similar to Emailová adresa..
         /// </summary>
         internal static string RegisterFormEmailInputLabel {
             get {
@@ -416,6 +416,114 @@ namespace eSlozka.Web.Resources {
         internal static string RegisterFormTitle {
             get {
                 return ResourceManager.GetString("RegisterFormTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emailová adresa má neplatný formát..
+        /// </summary>
+        internal static string ValidationUserEmailInvalidFormat {
+            get {
+                return ResourceManager.GetString("ValidationUserEmailInvalidFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emailová adresa může být nejvýše 256 znaků dlouhé..
+        /// </summary>
+        internal static string ValidationUserEmailMaxLength {
+            get {
+                return ResourceManager.GetString("ValidationUserEmailMaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Povinné pole..
+        /// </summary>
+        internal static string ValidationUserEmailRequired {
+            get {
+                return ResourceManager.GetString("ValidationUserEmailRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Příjmění může být nejvýše 256 znaků dlouhé..
+        /// </summary>
+        internal static string ValidationUserFamilyNameMaxLength {
+            get {
+                return ResourceManager.GetString("ValidationUserFamilyNameMaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Povinné pole..
+        /// </summary>
+        internal static string ValidationUserFamilyNameRequired {
+            get {
+                return ResourceManager.GetString("ValidationUserFamilyNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jméno může být nejvýše 256 znaků dlouhé..
+        /// </summary>
+        internal static string ValidationUserGivenNameMaxLength {
+            get {
+                return ResourceManager.GetString("ValidationUserGivenNameMaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Povinné pole..
+        /// </summary>
+        internal static string ValidationUserGivenNameRequired {
+            get {
+                return ResourceManager.GetString("ValidationUserGivenNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heslo může být nejvýše 256 znaků dlouhé..
+        /// </summary>
+        internal static string ValidationUserPasswordMaxLength {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordMaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hesla se musí shodovat..
+        /// </summary>
+        internal static string ValidationUserPasswordRepetitionDoesNotMatch {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordRepetitionDoesNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opakování hesla může být nejvýše 256 znaků dlouhé..
+        /// </summary>
+        internal static string ValidationUserPasswordRepetitionMaxLength {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordRepetitionMaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Povinné pole..
+        /// </summary>
+        internal static string ValidationUserPasswordRepetitionRequired {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordRepetitionRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Povinné pole..
+        /// </summary>
+        internal static string ValidationUserPasswordRequired {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordRequired", resourceCulture);
             }
         }
     }

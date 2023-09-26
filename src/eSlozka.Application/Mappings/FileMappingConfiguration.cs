@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
+using File = eSlozka.Domain.Models.File;
 
-namespace eSlozka.Domain.Models.Mappings;
+namespace eSlozka.Application.Mappings;
 
 public class FileMappingConfiguration : Profile
 {
