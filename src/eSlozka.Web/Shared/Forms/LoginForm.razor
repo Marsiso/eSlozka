@@ -23,9 +23,9 @@
                           Label="@Localizer["LoginFormEmailInputLabel"]"
                           MaxLength="256"
                           Placeholder="peter.novotny@centrum.cz"
-                          Required="true"
-                          RequiredError="@Localizer["LoginFormEmailInputPasswordRequiredError"]"
-                          DebounceInterval="500"/>
+                          DebounceInterval="500"
+                          Error="@Model.HasError(nameof(Model.Form.Email))"
+                          ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.Email))]"/>
 
             <!-- TODO: Add validation. -->
             <MudTextField Adornment="Adornment.End"
@@ -38,14 +38,14 @@
                           Label="@Localizer["LoginFormPasswordInputLabel"]"
                           MaxLength="256"
                           OnAdornmentClick="@Model.OnPasswordInputShowPasswordClick"
-                          Required="true"
-                          RequiredError="@Localizer["LoginFormPasswordInputPasswordRequiredError"]"
-                          DebounceInterval="500"/>
+                          DebounceInterval="500"
+                          Error="@Model.HasError(nameof(Model.Form.Password))"
+                          ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.Password))]"/>
         </MudCardContent>
         <MudCardActions Class="px-8 pb-8">
             <MudStack Class="flex flex-grow-1" Justify="Justify.FlexEnd" Row="true">
-                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Filled">@Localizer["LoginFormLoginButton"]</MudButton>
-                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Text">@Localizer["LoginFormRegisterButton"]</MudButton>
+                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Filled" OnClick="@Model.OnLoginButtonClick">@Localizer["LoginFormLoginButton"]</MudButton>
+                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Text" OnClick="@Model.OnRegisterButtonClick">@Localizer["LoginFormRegisterButton"]</MudButton>
             </MudStack>
         </MudCardActions>
     </MudForm>

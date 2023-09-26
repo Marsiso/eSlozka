@@ -44,8 +44,7 @@ public class RegisterCommandHandler : ICommandHandler<RegisterCommand, RegisterR
 
         using var context = _contextFactory.CreateDbContext();
 
-        if (!validationErrors.ContainsKey(nameof(request.Email)) && EmailTakenQuery(context, request.Email))
-            validationErrors.Add(nameof(request.Email), new[] { "ValidationUserEmailAlreadyTaken" });
+        if (EmailTakenQuery(context, request.Email)) validationErrors.TryAdd(nameof(request.Email), new[] { "ValidationUserEmailAlreadyTaken" });
 
         if (validationErrors.Count > 0)
             return Task.FromResult(new RegisterResult(

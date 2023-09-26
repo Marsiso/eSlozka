@@ -438,6 +438,15 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email or passoword is invalid..
+        /// </summary>
+        internal static string ValidationUserEmailOrPasswordInvalid {
+            get {
+                return ResourceManager.GetString("ValidationUserEmailOrPasswordInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Required field..
         /// </summary>
         internal static string ValidationUserEmailRequired {

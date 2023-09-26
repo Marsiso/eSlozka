@@ -174,4 +174,7 @@
     <data name="ValidationUserPasswordRepetitionDoesNotMatch" xml:space="preserve">
         <value>Password and its repetion must match.</value>
     </data>
+    <data name="ValidationUserEmailOrPasswordInvalid" xml:space="preserve">
+        <value>Email or passoword is invalid.</value>
+    </data>
 </root>

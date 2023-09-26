@@ -174,4 +174,7 @@
     <data name="ValidationUserGivenNameMaxLength" xml:space="preserve">
         <value>Jméno může být nejvýše 256 znaků dlouhé.</value>
     </data>
+    <data name="ValidationUserEmailOrPasswordInvalid" xml:space="preserve">
+        <value>Neplatné uživatelské jméno nebo heslo.</value>
+    </data>
 </root>

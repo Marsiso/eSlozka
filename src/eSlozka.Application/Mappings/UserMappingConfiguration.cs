@@ -19,9 +19,13 @@ public class UserMappingConfiguration : Profile
             .ReverseMap()
             .ForMember(member => member.Password, options => options.Ignore());
 
-        CreateMap<RegisterForm, RegisterCommand>()
+        CreateMap<RegisterForm, RegisterCommand>().ReverseMap();
+
+        CreateMap<User, LoginCommand>()
             .ForMember(member => member.Password, options => options.Ignore())
             .ReverseMap()
             .ForMember(member => member.Password, options => options.Ignore());
+
+        CreateMap<LoginForm, LoginCommand>().ReverseMap();
     }
 }

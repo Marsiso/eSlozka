@@ -438,6 +438,15 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Neplatné uživatelské jméno nebo heslo..
+        /// </summary>
+        internal static string ValidationUserEmailOrPasswordInvalid {
+            get {
+                return ResourceManager.GetString("ValidationUserEmailOrPasswordInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Povinné pole..
         /// </summary>
         internal static string ValidationUserEmailRequired {
