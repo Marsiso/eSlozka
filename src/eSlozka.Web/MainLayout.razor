@@ -60,6 +60,14 @@
         </MudContainer>
     </MudMainContent>
 </MudLayout>*@
-<MudOverlay DarkBackground="true" Visible="true">
-    @GetChildren()
-</MudOverlay>
+
+<MudBreakpointProvider>
+    <MudHidden Breakpoint="Breakpoint.SmAndUp">
+        @GetChildren()
+    </MudHidden>
+    <MudHidden Breakpoint="Breakpoint.Xs">
+        <MudOverlay DarkBackground="true" Visible="true">
+            @GetChildren()
+        </MudOverlay>
+    </MudHidden>
+</MudBreakpointProvider>

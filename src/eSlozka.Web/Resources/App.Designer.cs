@@ -274,5 +274,140 @@ namespace eSlozka.Web.Resources {
                 return ResourceManager.GetString("MainLayoutStatistics", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string RegisterFormEmailInputLabel {
+            get {
+                return ResourceManager.GetString("RegisterFormEmailInputLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required field..
+        /// </summary>
+        internal static string RegisterFormEmailInputRequiredError {
+            get {
+                return ResourceManager.GetString("RegisterFormEmailInputRequiredError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Family name.
+        /// </summary>
+        internal static string RegisterFormFamilyNameInputLabel {
+            get {
+                return ResourceManager.GetString("RegisterFormFamilyNameInputLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required field..
+        /// </summary>
+        internal static string RegisterFormFamilyNameInputRequiredError {
+            get {
+                return ResourceManager.GetString("RegisterFormFamilyNameInputRequiredError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given name.
+        /// </summary>
+        internal static string RegisterFormGivenNameInputLabel {
+            get {
+                return ResourceManager.GetString("RegisterFormGivenNameInputLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required field..
+        /// </summary>
+        internal static string RegisterFormGivenNameInputRequiredError {
+            get {
+                return ResourceManager.GetString("RegisterFormGivenNameInputRequiredError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        internal static string RegisterFormLoginButton {
+            get {
+                return ResourceManager.GetString("RegisterFormLoginButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        internal static string RegisterFormPasswordInputLabel {
+            get {
+                return ResourceManager.GetString("RegisterFormPasswordInputLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required field..
+        /// </summary>
+        internal static string RegisterFormPasswordInputRequiredError {
+            get {
+                return ResourceManager.GetString("RegisterFormPasswordInputRequiredError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show password.
+        /// </summary>
+        internal static string RegisterFormPasswordInputShowPasswordAriaLabel {
+            get {
+                return ResourceManager.GetString("RegisterFormPasswordInputShowPasswordAriaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password repeat.
+        /// </summary>
+        internal static string RegisterFormPasswordRepeatInputLabel {
+            get {
+                return ResourceManager.GetString("RegisterFormPasswordRepeatInputLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required field..
+        /// </summary>
+        internal static string RegisterFormPasswordRepeatInputRequiredError {
+            get {
+                return ResourceManager.GetString("RegisterFormPasswordRepeatInputRequiredError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show password.
+        /// </summary>
+        internal static string RegisterFormPasswordRepeatInputShowPasswordAriaLabel {
+            get {
+                return ResourceManager.GetString("RegisterFormPasswordRepeatInputShowPasswordAriaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        internal static string RegisterFormRegisterButton {
+            get {
+                return ResourceManager.GetString("RegisterFormRegisterButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        internal static string RegisterFormTitle {
+            get {
+                return ResourceManager.GetString("RegisterFormTitle", resourceCulture);
+            }
+        }
     }
 }

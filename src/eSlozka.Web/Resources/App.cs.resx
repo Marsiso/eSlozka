@@ -90,4 +90,49 @@
     <data name="LoginFormTitle" xml:space="preserve">
         <value>Přihlásit se</value>
     </data>
+    <data name="RegisterFormTitle" xml:space="preserve">
+        <value>Registrovat se</value>
+    </data>
+    <data name="RegisterFormPasswordRepeatInputShowPasswordAriaLabel" xml:space="preserve">
+        <value>Zobrazit heslo</value>
+    </data>
+    <data name="RegisterFormPasswordRepeatInputRequiredError" xml:space="preserve">
+        <value>Povinné pole.</value>
+    </data>
+    <data name="RegisterFormPasswordInputRequiredError" xml:space="preserve">
+        <value>Povinné pole.</value>
+    </data>
+    <data name="RegisterFormGivenNameInputRequiredError" xml:space="preserve">
+        <value>Povinné pole.</value>
+    </data>
+    <data name="RegisterFormFamilyNameInputRequiredError" xml:space="preserve">
+        <value>Povinné pole.</value>
+    </data>
+    <data name="RegisterFormEmailInputRequiredError" xml:space="preserve">
+        <value>Povinné pole.</value>
+    </data>
+    <data name="RegisterFormEmailInputLabel" xml:space="preserve">
+        <value>Emailov8 adresa.</value>
+    </data>
+    <data name="RegisterFormFamilyNameInputLabel" xml:space="preserve">
+        <value>Příjmení</value>
+    </data>
+    <data name="RegisterFormGivenNameInputLabel" xml:space="preserve">
+        <value>Jméno</value>
+    </data>
+    <data name="RegisterFormPasswordInputLabel" xml:space="preserve">
+        <value>Heslo</value>
+    </data>
+    <data name="RegisterFormPasswordRepeatInputLabel" xml:space="preserve">
+        <value>Opakování hesla</value>
+    </data>
+    <data name="RegisterFormPasswordInputShowPasswordAriaLabel" xml:space="preserve">
+        <value>Zobrazit heslo</value>
+    </data>
+    <data name="RegisterFormLoginButton" xml:space="preserve">
+        <value>Přihlásit se</value>
+    </data>
+    <data name="RegisterFormRegisterButton" xml:space="preserve">
+        <value>Registrovat se</value>
+    </data>
 </root>

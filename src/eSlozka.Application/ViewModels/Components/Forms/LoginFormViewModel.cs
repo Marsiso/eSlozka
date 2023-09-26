@@ -59,6 +59,6 @@ public class LoginFormViewModel : ViewModelBase
 
     public string GetComponentWidth()
     {
-        return HasMobileDeviceViewPortWidth ? "min-width: 100vw; min-height: 100vh;" : "min-width: 30rem;";
+        return HasMobileDeviceViewPortWidth ? "min-width: 100vw; min-height: 100vh;" : "min-width: 30rem; max-width: 30rem;";
     }
 }
