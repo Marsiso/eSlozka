@@ -11,9 +11,9 @@ using Microsoft.Extensions.Logging;
 
 namespace eSlozka.Core.Commands.Users;
 
-public record LoginCommand(string? Email, string? Password) : ICommand<LoginResult>;
+public record VerifyCredentialsCommand(string? Email, string? Password) : ICommand<VerifyCredentialsResult>;
 
-public class LoginCommandHandler : ICommandHandler<LoginCommand, LoginResult>
+public class VerifyCredentialsCommandHandler : ICommandHandler<VerifyCredentialsCommand, VerifyCredentialsResult>
 {
     private static readonly Func<DataContext, string, User?> EmailTakenQuery = EF.CompileQuery((DataContext context, string email) => context.Users
         .AsNoTracking()
@@ -21,11 +21,11 @@ public class LoginCommandHandler : ICommandHandler<LoginCommand, LoginResult>
 
     private readonly IDbContextFactory<DataContext> _contextFactory;
     private readonly IHashProvider _hasher;
-    private readonly ILogger<LoginCommandHandler> _logger;
+    private readonly ILogger<VerifyCredentialsCommandHandler> _logger;
     private readonly IMapper _mapper;
-    private readonly IEnumerable<IValidator<LoginCommand>> _validators;
+    private readonly IEnumerable<IValidator<VerifyCredentialsCommand>> _validators;
 
-    public LoginCommandHandler(IDbContextFactory<DataContext> contextFactory, IMapper mapper, IHashProvider hasher, IEnumerable<IValidator<LoginCommand>> validators, ILogger<LoginCommandHandler> logger)
+    public VerifyCredentialsCommandHandler(IDbContextFactory<DataContext> contextFactory, IMapper mapper, IHashProvider hasher, IEnumerable<IValidator<VerifyCredentialsCommand>> validators, ILogger<VerifyCredentialsCommandHandler> logger)
     {
         _contextFactory = contextFactory;
         _hasher = hasher;
@@ -34,11 +34,11 @@ public class LoginCommandHandler : ICommandHandler<LoginCommand, LoginResult>
         _validators = validators;
     }
 
-    public Task<LoginResult> Handle(LoginCommand request, CancellationToken cancellationToken)
+    public Task<VerifyCredentialsResult> Handle(VerifyCredentialsCommand request, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(request, nameof(request));
 
-        var validationContext = new ValidationContext<LoginCommand>(request);
+        var validationContext = new ValidationContext<VerifyCredentialsCommand>(request);
         var validationErrors = _validators.Select(validator => validator.Validate(validationContext))
             .DistinctErrorsByProperty();
 
@@ -48,11 +48,7 @@ public class LoginCommandHandler : ICommandHandler<LoginCommand, LoginResult>
 
         if (user is null) validationErrors.TryAdd(nameof(request.Email), new[] { "ValidationUserEmailOrPasswordInvalid" });
 
-        if (validationErrors.Count > 0)
-            return Task.FromResult(new LoginResult(
-                LoginResultType.Failed,
-                default,
-                new EntityValidationException(validationErrors)));
+        if (validationErrors.Count > 0) return Task.FromResult(new VerifyCredentialsResult(default, new EntityValidationException(validationErrors)));
 
         var verificationResult = _hasher.VerifyHash(request.Password, user.Password, user.PasswordSalt);
 
@@ -60,23 +56,26 @@ public class LoginCommandHandler : ICommandHandler<LoginCommand, LoginResult>
         {
             validationErrors.TryAdd(nameof(request.Email), new[] { "ValidationUserEmailOrPasswordInvalid" });
 
-            return Task.FromResult(new LoginResult(
-                LoginResultType.Failed,
-                default,
-                new EntityValidationException(validationErrors)));
+            return Task.FromResult(new VerifyCredentialsResult(default, new EntityValidationException(validationErrors)));
         }
 
-        return Task.FromResult(new LoginResult(
-            LoginResultType.Succeeded,
-            user,
-            default));
+        return Task.FromResult(new VerifyCredentialsResult(user, default));
     }
 }
 
-public record struct LoginResult(LoginResultType Result, User? User, EntityValidationException? ValidationException);
+public readonly record struct VerifyCredentialsResult(User? User, EntityValidationException? ValidationException)
+{
+    public VerifyCredentialsResultType Result => (User, ValidationException) switch
+    {
+        (not null, null) => VerifyCredentialsResultType.Succeeded,
+        (null, not null) => VerifyCredentialsResultType.Failed,
+        (_, _) => VerifyCredentialsResultType.InternalServerError
+    };
+}
 
-public enum LoginResultType
+public enum VerifyCredentialsResultType
 {
     Succeeded,
-    Failed
+    Failed,
+    InternalServerError
 }

@@ -1,4 +1,4 @@
-﻿@page "/"
-
-<eSlozka.Web.Shared.Forms.LoginForm>
-</eSlozka.Web.Shared.Forms.LoginForm>
+﻿@using Microsoft.AspNetCore.Authorization
+@using eSlozka.Application.ViewModels
+@attribute [Authorize]
+@attribute [Route(Routes.Home)]

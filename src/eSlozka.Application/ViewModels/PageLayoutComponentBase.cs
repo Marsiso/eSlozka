@@ -10,6 +10,7 @@ public class PageLayoutComponentBase<TViewModel> : LayoutComponentBase, IDisposa
     public void Dispose()
     {
         Model.PropertyChanged -= OnModelPropertyChanged;
+
         GC.SuppressFinalize(this);
     }
 

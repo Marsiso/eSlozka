@@ -11,6 +11,7 @@ public class PageComponentBase<TViewModel> : ComponentBase, IDisposable where TV
     {
         Model.PropertyChanged -= OnModelPropertyChanged;
         Model.Dispose();
+
         GC.SuppressFinalize(this);
     }
 
@@ -33,9 +34,9 @@ public class PageComponentBase<TViewModel> : ComponentBase, IDisposable where TV
 
     protected override Task OnAfterRenderAsync(bool firstRender)
     {
-        return firstRender
-            ? Model.OnViewModelAfterRender()
-            : base.OnAfterRenderAsync(firstRender);
+        if (firstRender) return Model.OnViewModelAfterRender();
+
+        return base.OnAfterRenderAsync(firstRender);
     }
 
     private async void OnModelPropertyChanged(object? sender, PropertyChangedEventArgs args)

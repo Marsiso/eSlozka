@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace eSlozka.Application.Validations.Users;
 
-public class LoginCommandValidator : AbstractValidator<LoginCommand>
+public class LoginCommandValidator : AbstractValidator<VerifyCredentialsCommand>
 {
     public LoginCommandValidator()
     {

@@ -1,5 +1,9 @@
-﻿@using Microsoft.Extensions.Localization
-@inherits eSlozka.Application.ViewModels.PageComponentBase<eSlozka.Application.ViewModels.Components.Forms.LoginFormViewModel>
+﻿@attribute [Route(Routes.Authentication.Login)]
+@attribute [AllowAnonymous]
+@using Microsoft.Extensions.Localization
+@using eSlozka.Application.ViewModels
+@using Microsoft.AspNetCore.Authorization
+@inherits eSlozka.Application.ViewModels.PageComponentBase<eSlozka.Application.ViewModels.Authentication.LoginPageViewModel>
 
 @inject IStringLocalizer<App> Localizer
 

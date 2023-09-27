@@ -14,7 +14,6 @@ public class User : ChangeTrackingEntity
     public string? Locale { get; set; }
     public string? ProfilePhoto { get; set; }
     public bool DarkThemeEnabled { get; set; }
-    public bool Verified { get; set; }
 
     public ICollection<UserRole>? Roles { get; set; }
     public ICollection<Folder>? Folders { get; set; }

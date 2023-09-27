@@ -1,38 +1,39 @@
 ﻿using AutoMapper;
+using eSlozka.Application.Authentication;
 using eSlozka.Core.Commands.Users;
 using eSlozka.Domain.DataTransferObjects.Forms;
+using eSlozka.Domain.DataTransferObjects.Sessions;
 using eSlozka.Domain.Exceptions;
 using MediatR;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using MudBlazor;
 
-namespace eSlozka.Application.ViewModels.Components.Forms;
+namespace eSlozka.Application.ViewModels.Authentication;
 
-public class RegisterFormViewModel : ViewModelBase
+public class LoginPageViewModel : ViewModelBase
 {
+    private readonly AuthenticationStateProvider _authenticationStateProvider;
     private readonly IMapper _mapper;
     private readonly NavigationManager _navigation;
     private readonly ISender _sender;
 
-    private RegisterForm _form = new();
-
+    private LoginForm _form = new();
     private bool _hasMobileDeviceViewPortWidth;
     private string _passwordInputIcon = Icons.Material.Filled.VisibilityOff;
     private bool _passwordInputShowPassword;
     private InputType _passwordInputType = InputType.Password;
-    private string _passwordRepeatInputIcon = Icons.Material.Filled.VisibilityOff;
-    private bool _passwordRepeatInputShowPassword;
-    private InputType _passwordRepeatInputType = InputType.Password;
     private EntityValidationException? _validationException;
 
-    public RegisterFormViewModel(ISender sender, NavigationManager navigation, IMapper mapper)
+    public LoginPageViewModel(IMapper mapper, NavigationManager navigation, ISender sender, AuthenticationStateProvider authenticationStateProvider)
     {
-        _sender = sender;
-        _navigation = navigation;
         _mapper = mapper;
+        _navigation = navigation;
+        _sender = sender;
+        _authenticationStateProvider = authenticationStateProvider;
     }
 
-    public RegisterForm Form
+    public LoginForm Form
     {
         get => _form;
         set => SetValue(ref _form, value);
@@ -44,34 +45,16 @@ public class RegisterFormViewModel : ViewModelBase
         set => SetValue(ref _passwordInputShowPassword, value);
     }
 
-    public bool PasswordRepeatInputShowPassword
-    {
-        get => _passwordRepeatInputShowPassword;
-        set => SetValue(ref _passwordRepeatInputShowPassword, value);
-    }
-
     public InputType PasswordInputType
     {
         get => _passwordInputType;
         set => SetValue(ref _passwordInputType, value);
     }
 
-    public InputType PasswordRepeatInputType
-    {
-        get => _passwordRepeatInputType;
-        set => SetValue(ref _passwordRepeatInputType, value);
-    }
-
     public string PasswordInputIcon
     {
         get => _passwordInputIcon;
         set => SetValue(ref _passwordInputIcon, value);
-    }
-
-    public string PasswordRepeatInputIcon
-    {
-        get => _passwordRepeatInputIcon;
-        set => SetValue(ref _passwordRepeatInputIcon, value);
     }
 
     public bool HasMobileDeviceViewPortWidth
@@ -102,40 +85,31 @@ public class RegisterFormViewModel : ViewModelBase
         }
     }
 
-    public void OnPasswordRepeatInputShowPasswordClick()
-    {
-        if (PasswordRepeatInputShowPassword)
-        {
-            PasswordRepeatInputShowPassword = false;
-            PasswordRepeatInputIcon = Icons.Material.Filled.VisibilityOff;
-            PasswordRepeatInputType = InputType.Password;
-        }
-        else
-        {
-            PasswordRepeatInputShowPassword = true;
-            PasswordRepeatInputIcon = Icons.Material.Filled.Visibility;
-            PasswordRepeatInputType = InputType.Text;
-        }
-    }
-
     public string GetComponentWidth()
     {
         return HasMobileDeviceViewPortWidth ? "min-width: 100vw; min-height: 100vh;" : "min-width: 30rem; max-width: 30rem;";
     }
 
-    public async Task OnRegisterButtonClick()
+    public async Task OnLoginButtonClick()
     {
-        var registerCommand = _mapper.Map<RegisterCommand>(Form);
-        var result = await _sender.Send(registerCommand);
+        var command = _mapper.Map<VerifyCredentialsCommand>(Form);
+        var result = await _sender.Send(command);
 
-        if (result.Result == RegisterResultType.Succeeded) _navigation.NavigateTo("/", true);
+        if (_authenticationStateProvider is RevalidatingAuthenticationStateProvider revalidatingAuthenticationStateProvider && result.Result == VerifyCredentialsResultType.Succeeded)
+        {
+            var userSession = _mapper.Map<UserSession>(result.User);
+
+            await revalidatingAuthenticationStateProvider.UpdateAuthenticationState(userSession);
+
+            _navigation.NavigateTo(Routes.Home);
+        }
 
         ValidationException = result.ValidationException;
     }
 
-    public void OnLoginButtonClick()
+    public void OnRegisterButtonClick()
     {
-        _navigation.NavigateTo("/");
+        _navigation.NavigateTo(Routes.Authentication.Register);
     }
 
     public bool HasError(string propertyName)

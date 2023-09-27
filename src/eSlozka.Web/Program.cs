@@ -1,5 +1,8 @@
+using eSlozka.Application.Authentication;
 using eSlozka.Application.Mappings;
 using eSlozka.Web;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,8 +16,14 @@ services.AddSingleton<IConfiguration>(configuration);
 services.AddControllers();
 services.AddLocalization(options => options.ResourcesPath = "Resources");
 
+services.AddAuthenticationCore();
 services.AddRazorPages();
 services.AddServerSideBlazor();
+services.AddScoped<ProtectedSessionStorage>();
+services.AddScoped<AuthenticationStateProvider, RevalidatingAuthenticationStateProvider>();
+
+services.AddHttpContextAccessor();
+services.AddHttpClient();
 
 services.AddServerlessDatabase(configuration, environment);
 services.AddAutoMapper(typeof(UserMappingConfiguration));
@@ -45,6 +54,9 @@ application.UseHttpsRedirection();
 application.UseStaticFiles();
 
 application.UseRouting();
+
+application.UseAuthentication();
+application.UseAuthorization();
 
 application.MapControllers();
 application.MapBlazorHub();
