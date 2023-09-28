@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
 using eSlozka.Domain.Constants;
 using eSlozka.Domain.DataTransferObjects.Sessions;
+using eSlozka.Domain.Helpers;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.Extensions.Logging;
@@ -38,7 +39,8 @@ public class RevalidatingAuthenticationStateProvider : AuthenticationStateProvid
                 new(UserClaimTypes.FamilyName, userSession.FamilyName),
                 new(UserClaimTypes.Email, userSession.Email),
                 new(UserClaimTypes.EmailConfirmed, userSession.EmailConfirmed.ToString()),
-                new(UserClaimTypes.DarkThemeEnabled, userSession.DarkThemeEnabled.ToString())
+                new(UserClaimTypes.DarkThemeEnabled, userSession.DarkThemeEnabled.ToString()),
+                new(UserClaimTypes.Permissions, PolicyNameHelpers.GetPolicyNameFor(userSession.Permissions))
             };
 
             if (!string.IsNullOrWhiteSpace(userSession.ProfilePhoto)) claims.Add(new Claim(UserClaimTypes.ProfilePhoto, userSession.ProfilePhoto));
@@ -70,7 +72,8 @@ public class RevalidatingAuthenticationStateProvider : AuthenticationStateProvid
                 new(UserClaimTypes.FamilyName, userSession.FamilyName),
                 new(UserClaimTypes.Email, userSession.Email),
                 new(UserClaimTypes.EmailConfirmed, userSession.EmailConfirmed.ToString()),
-                new(UserClaimTypes.DarkThemeEnabled, userSession.DarkThemeEnabled.ToString())
+                new(UserClaimTypes.DarkThemeEnabled, userSession.DarkThemeEnabled.ToString()),
+                new(UserClaimTypes.Permissions, PolicyNameHelpers.GetPolicyNameFor(userSession.Permissions))
             };
 
             if (!string.IsNullOrWhiteSpace(userSession.ProfilePhoto)) claims.Add(new Claim(UserClaimTypes.ProfilePhoto, userSession.ProfilePhoto));

@@ -1,3 +1,6 @@
-﻿@using eSlozka.Domain.Constants
-@attribute [Authorize]
+﻿@using eSlozka.Domain.Enums
+@using eSlozka.Domain.Constants
+@attribute [PermissionAuthorize(Permission.ViewFiles)]
 @attribute [Route(Routes.Home)]
+
+<h1>Hello world!</h1>

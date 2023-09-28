@@ -16,7 +16,6 @@ public class DataContext : DbContext
 
     public DbSet<User> Users { get; set; } = default!;
     public DbSet<Role> Roles { get; set; } = default!;
-    public DbSet<Permission> Permissions { get; set; } = default!;
     public DbSet<UserRole> UserRoles { get; set; } = default!;
     public DbSet<Folder> Folders { get; set; } = default!;
     public DbSet<File> Files { get; set; } = default!;

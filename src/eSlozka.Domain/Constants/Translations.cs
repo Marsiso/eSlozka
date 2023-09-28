@@ -1,4 +1,4 @@
-﻿namespace eSlozka.Domain.Enums;
+﻿namespace eSlozka.Domain.Constants;
 
 public static class Translations
 {

@@ -1,5 +1,5 @@
 ﻿using eSlozka.Core.Commands.Users;
-using eSlozka.Domain.Enums;
+using eSlozka.Domain.Constants;
 using FluentValidation;
 using Microsoft.Extensions.Localization;
 

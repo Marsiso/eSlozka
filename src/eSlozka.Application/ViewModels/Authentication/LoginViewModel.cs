@@ -4,6 +4,7 @@ using eSlozka.Core.Commands.Users;
 using eSlozka.Domain.Constants;
 using eSlozka.Domain.DataTransferObjects.Forms;
 using eSlozka.Domain.DataTransferObjects.Sessions;
+using eSlozka.Domain.Enums;
 using eSlozka.Domain.Exceptions;
 using MediatR;
 using Microsoft.AspNetCore.Components;
@@ -99,6 +100,10 @@ public class LoginViewModel : ViewModelBase
         if (_authenticationStateProvider is RevalidatingAuthenticationStateProvider revalidatingAuthenticationStateProvider && result.Result == VerifyCredentialsResultType.Succeeded)
         {
             var userSession = _mapper.Map<UserSession>(result.User);
+
+            userSession.Permissions = result.User?.Roles
+                ?.Select(role => role.Role?.Permission)
+                .Aggregate((left, right) => left | right) ?? Permission.None;
 
             await revalidatingAuthenticationStateProvider.UpdateAuthenticationState(userSession);
 

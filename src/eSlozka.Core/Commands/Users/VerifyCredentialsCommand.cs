@@ -17,6 +17,8 @@ public class VerifyCredentialsCommandHandler : ICommandHandler<VerifyCredentials
 {
     private static readonly Func<DataContext, string, User?> EmailTakenQuery = EF.CompileQuery((DataContext context, string email) => context.Users
         .AsNoTracking()
+        .Include(user => user.Roles)
+        !.ThenInclude(role => role.Role)
         .SingleOrDefault(user => user.Email == email));
 
     private readonly IDbContextFactory<DataContext> _contextFactory;

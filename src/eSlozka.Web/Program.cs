@@ -1,6 +1,8 @@
 using eSlozka.Application.Authentication;
+using eSlozka.Application.Authorization;
 using eSlozka.Application.Mappings;
 using eSlozka.Web;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.Extensions.Localization;
@@ -19,6 +21,9 @@ services.AddLocalization(options => options.ResourcesPath = "Resources");
 services.AddTransient<IStringLocalizer, StringLocalizer<App>>();
 
 services.AddAuthenticationCore();
+services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
+services.AddSingleton<IAuthorizationPolicyProvider, PermissionAuthorizationPolicyProvider>();
+
 services.AddRazorPages();
 services.AddServerSideBlazor();
 services.AddScoped<ProtectedSessionStorage>();
@@ -27,7 +32,7 @@ services.AddScoped<AuthenticationStateProvider, RevalidatingAuthenticationStateP
 services.AddHttpContextAccessor();
 services.AddHttpClient();
 
-services.AddServerlessDatabase(configuration, environment);
+services.AddSqlite(configuration, environment);
 services.AddAutoMapper(typeof(UserMappingConfiguration));
 services.AddViewModels();
 services.AddMudServices();
@@ -37,7 +42,8 @@ services.AddUtilities(configuration);
 
 var application = builder.Build();
 
-application.UseServerlessDatabaseAutoMigration();
+application.UseSqliteMigration();
+application.UseSqliteSeeder();
 
 application.UseLocalizationResources();
 

@@ -9,4 +9,5 @@ public static class UserClaimTypes
     public const string FamilyName = "family_name";
     public const string ProfilePhoto = "profile_photo";
     public const string DarkThemeEnabled = "dark_theme_enabled";
+    public const string Permissions = "permissions";
 }

@@ -1,6 +1,6 @@
 ﻿using eSlozka.Core.Commands.Users;
 using eSlozka.Core.Queries.Users;
-using eSlozka.Domain.Enums;
+using eSlozka.Domain.Constants;
 using eSlozka.Domain.Extensions;
 using FluentValidation;
 using MediatR;

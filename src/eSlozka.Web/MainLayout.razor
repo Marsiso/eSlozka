@@ -1,57 +1,64 @@
-﻿@using static Domain.Enums.Translations.MainLayout
+﻿@using static Domain.Constants.Translations.MainLayout
 
 @inherits PageLayoutComponentBase<eSlozka.Application.ViewModels.Shared.Layouts.MainLayoutViewModel>
 
 @inject IStringLocalizer<App> Localizer
 
-<MudThemeProvider IsDarkMode="true"/>
+<MudThemeProvider IsDarkMode="false"/>
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
-<AuthorizeView>
+<PermissionAuthorizeView>
     <Authorized>
         <MudLayout>
             <MudAppBar Color="Color.Transparent">
-                <MudIconButton Edge="Edge.Start" Icon="@Icons.Material.Filled.Menu" OnClick="@Model.ToggleSidebar"/>
-                <MudText Class="ml-3" Typo="Typo.h6">@Localizer[Appbar.Brand]</MudText>
+                <MudIconButton Edge="Edge.Start" Icon="@Icons.Material.Rounded.ViewSidebar" Color="Color.Dark" Variant="Variant.Filled" OnClick="@Model.ToggleSidebar"/>
+                <MudIconButton Edge="Edge.Start" Icon="@Icons.Material.Rounded.Search" Color="Color.Dark" Variant="Variant.Filled" Class="ml-2"/>
+                <MudText Class="ml-8" Typo="Typo.h5" Color="Color.Dark" Style="font-weight: bold; font-family: 'Ink Free', serif">
+                    @Localizer[Appbar.Brand]
+                </MudText>
                 <MudSpacer/>
                 <MudMenu Variant="Variant.Text" AnchorOrigin="Origin.BottomLeft" TransformOrigin="Origin.BottomLeft">
                     <ActivatorContent>
                         <MudAvatar Rounded="true" Variant="Variant.Text"/>
                     </ActivatorContent>
                     <ChildContent>
-                        <MudMenuItem Disabled="true" Icon="@Icons.Material.Filled.Person3">@Session?.GivenName @Session?.FamilyName</MudMenuItem>
-                        <MudMenuItem Disabled="true" Icon="@Icons.Material.Filled.Email">@Session?.Email</MudMenuItem>
-                        <MudMenuItem Icon="@Icons.Material.Filled.AccountBox">@Localizer[Appbar.Drawer.Link.Account]</MudMenuItem>
-                        <MudMenuItem Icon="@Icons.Material.Filled.Settings">@Localizer[Appbar.Drawer.Link.Settings]</MudMenuItem>
-                        <MudMenuItem Icon="@Icons.Material.Filled.Logout" OnClick="@Logout">@Localizer[Appbar.Drawer.Link.Logout]</MudMenuItem>
+                        <MudMenuItem Disabled="true" Icon="@Icons.Material.Rounded.Person3" IconColor="Color.Dark">
+                            <MudText Color="Color.Dark">@Session?.GivenName @Session?.FamilyName</MudText>
+                        </MudMenuItem>
+                        <MudMenuItem Disabled="true" Icon="@Icons.Material.Rounded.Email" IconColor="Color.Dark" Class="mb-4">
+                            <MudText Color="Color.Dark">@Session?.Email</MudText>
+                        </MudMenuItem>
+                        <MudMenuItem Icon="@Icons.Material.Rounded.AccountBox" IconColor="Color.Dark">@Localizer[Appbar.Drawer.Link.Account]</MudMenuItem>
+                        <MudMenuItem Icon="@Icons.Material.Rounded.Settings" IconColor="Color.Dark">@Localizer[Appbar.Drawer.Link.Settings]</MudMenuItem>
+                        <MudMenuItem Icon="@Icons.Material.Rounded.Logout" IconColor="Color.Dark" OnClick="@Logout">@Localizer[Appbar.Drawer.Link.Logout]</MudMenuItem>
                     </ChildContent>
                 </MudMenu>
             </MudAppBar>
             <MudDrawer @bind-Open="@Model.SidebarVisible" ClipMode="DrawerClipMode.Always" DisableOverlay="true" Variant="DrawerVariant.Responsive">
                 <MudStack Justify="Justify.SpaceBetween" Class="flex flex-grow-1">
-                    <MudNavMenu Color="@Color.Inherit" Margin="Margin.Normal" Rounded="false">
-                        <MudNavLink Icon="@Icons.Material.Filled.Folder" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Files]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.Link" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.SharedWithMe]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.Bookmark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Bookmarks]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.Delete" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Deleted]</MudNavLink>
+                    <MudNavMenu Color="@Color.Inherit" Margin="Margin.Normal">
+                        <MudNavLink Icon="@Icons.Material.Rounded.Folder" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Files]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.Link" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.SharedWithMe]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.Bookmark" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Bookmarks]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.Delete" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Deleted]</MudNavLink>
                         <MudDivider DividerType="DividerType.Middle"/>
-                        <MudNavLink Icon="@Icons.Material.Filled.Error" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Notifications]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.Error" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Notifications]</MudNavLink>
                         <MudDivider DividerType="DividerType.Middle"/>
-                        <MudNavLink Icon="@Icons.Material.Filled.ManageAccounts" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.ManageUsers]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.AddToDrive" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.ManageRepository]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.DashboardCustomize" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.ManageCodeLists]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.AddTask" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.ManageTasks]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.BarChart" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.ManageStatistics]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.ManageHistory" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.History]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.LogoDev" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Logs]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.ManageAccounts" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.ManageUsers]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.AddToDrive" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.ManageRepository]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.DashboardCustomize" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.ManageCodeLists]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.AddTask" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.ManageTasks]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.BarChart" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.ManageStatistics]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.ManageHistory" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.History]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.LogoDev" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Logs]</MudNavLink>
                     </MudNavMenu>
-                    <MudNavMenu Color="@Color.Inherit" Margin="Margin.Normal" Rounded="false">
+                    <MudNavMenu Color="@Color.Inherit" Margin="Margin.Normal">
                         <MudDivider DividerType="DividerType.Middle"/>
-                        <MudNavLink Icon="@Icons.Material.Filled.AccountBox" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Account]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.Settings" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Settings]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.Info" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.AboutApplication]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.Logout" Match="NavLinkMatch.All" OnClick="@Logout">@Localizer[Sidebar.Drawer.Link.Logout]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.AccountBox" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Account]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.Settings" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Settings]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.Info" IconColor="Color.Dark" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.AboutApplication]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Rounded.Logout" IconColor="Color.Dark" Match="NavLinkMatch.All" OnClick="@Logout">@Localizer[Sidebar.Drawer.Link.Logout]</MudNavLink>
                     </MudNavMenu>
                 </MudStack>
             </MudDrawer>
@@ -79,4 +86,4 @@
     <Authorizing>
         Authorizing
     </Authorizing>
-</AuthorizeView>
+</PermissionAuthorizeView>

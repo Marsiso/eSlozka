@@ -5,6 +5,8 @@ using eSlozka.Core.Commands.Users;
 using eSlozka.Core.Utilities;
 using eSlozka.Data;
 using eSlozka.Domain.Constants;
+using eSlozka.Domain.Enums;
+using eSlozka.Domain.Models;
 using eSlozka.Domain.Services;
 using FluentValidation;
 using Microsoft.AspNetCore.Localization;
@@ -16,7 +18,7 @@ namespace eSlozka.Web;
 
 public static class ConfigurationExtensions
 {
-    public static IServiceCollection AddServerlessDatabase(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
+    public static IServiceCollection AddSqlite(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
     {
         services.AddOptions<DataContextOptions>()
             .Bind(configuration.GetSection(DataContextOptions.SectionName))
@@ -57,7 +59,7 @@ public static class ConfigurationExtensions
         return services;
     }
 
-    public static WebApplication UseServerlessDatabaseAutoMigration(this WebApplication application)
+    public static WebApplication UseSqliteMigration(this WebApplication application)
     {
         var services = application.Services;
         var environment = application.Environment;
@@ -128,5 +130,72 @@ public static class ConfigurationExtensions
         services.AddSingleton<IHashProvider, HashProvider>();
 
         return services;
+    }
+
+    public static WebApplication UseSqliteSeeder(this WebApplication application)
+    {
+        var services = application.Services;
+
+        using var scope = services.CreateScope();
+        using var context = scope.ServiceProvider.GetRequiredService<DataContext>();
+        var hasher = scope.ServiceProvider.GetRequiredService<IHashProvider>();
+
+        var administrator = new User
+        {
+            GivenName = "System",
+            FamilyName = "Administrator",
+            Email = "system.administrator@provider.dev",
+            EmailConfirmed = true,
+            Locale = Locales.Default,
+            DarkThemeEnabled = false
+        };
+
+        (administrator.Password, administrator.PasswordSalt) = hasher.GetHash("Password123$");
+
+        context.Users.Add(administrator);
+
+        var manager = new User
+        {
+            GivenName = "System",
+            FamilyName = "Manager",
+            Email = "system.manager@provider.dev",
+            EmailConfirmed = true,
+            Locale = Locales.Default,
+            DarkThemeEnabled = false
+        };
+
+        (manager.Password, manager.PasswordSalt) = hasher.GetHash("Password123$");
+
+        context.Users.Add(manager);
+
+        context.SaveChanges();
+
+        var roles = context.Roles.AsNoTracking().ToList();
+
+        foreach (var role in roles)
+        {
+            var roleAssignment = new UserRole
+            {
+                UserID = administrator.UserID,
+                RoleID = role.RoleID
+            };
+
+            context.UserRoles.Add(roleAssignment);
+        }
+
+        foreach (var role in roles.Where(role => role.Permission != Permission.All))
+        {
+            var roleAssignment = new UserRole
+            {
+                UserID = manager.UserID,
+                RoleID = role.RoleID
+            };
+
+            context.UserRoles.Add(roleAssignment);
+        }
+
+        context.SaveChanges();
+
+        return application;
     }
 }
