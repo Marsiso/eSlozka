@@ -82,6 +82,8 @@ public class RevalidatingAuthenticationStateProvider : AuthenticationStateProvid
         }
         else
         {
+            await _sessionStorage.DeleteAsync(nameof(UserSession));
+
             authenticationState = new AuthenticationState(_anonymous);
         }
 

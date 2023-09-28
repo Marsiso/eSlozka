@@ -24,7 +24,7 @@
                         <MudMenuItem Disabled="true" Icon="@Icons.Material.Filled.Email">@Session?.Email</MudMenuItem>
                         <MudMenuItem Icon="@Icons.Material.Filled.AccountBox">@Localizer[Appbar.Drawer.Link.Account]</MudMenuItem>
                         <MudMenuItem Icon="@Icons.Material.Filled.Settings">@Localizer[Appbar.Drawer.Link.Settings]</MudMenuItem>
-                        <MudMenuItem Icon="@Icons.Material.Filled.Logout">@Localizer[Appbar.Drawer.Link.Logout]</MudMenuItem>
+                        <MudMenuItem Icon="@Icons.Material.Filled.Logout" OnClick="@Logout">@Localizer[Appbar.Drawer.Link.Logout]</MudMenuItem>
                     </ChildContent>
                 </MudMenu>
             </MudAppBar>
@@ -51,7 +51,7 @@
                         <MudNavLink Icon="@Icons.Material.Filled.AccountBox" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Account]</MudNavLink>
                         <MudNavLink Icon="@Icons.Material.Filled.Settings" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Settings]</MudNavLink>
                         <MudNavLink Icon="@Icons.Material.Filled.Info" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.AboutApplication]</MudNavLink>
-                        <MudNavLink Icon="@Icons.Material.Filled.Logout" Match="NavLinkMatch.All">@Localizer[Sidebar.Drawer.Link.Logout]</MudNavLink>
+                        <MudNavLink Icon="@Icons.Material.Filled.Logout" Match="NavLinkMatch.All" OnClick="@Logout">@Localizer[Sidebar.Drawer.Link.Logout]</MudNavLink>
                     </MudNavMenu>
                 </MudStack>
             </MudDrawer>

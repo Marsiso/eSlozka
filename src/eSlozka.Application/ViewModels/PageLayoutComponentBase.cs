@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using eSlozka.Application.Authentication;
 using eSlozka.Domain.DataTransferObjects.Sessions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -25,6 +26,11 @@ public class PageLayoutComponentBase<TViewModel> : LayoutComponentBase, IDisposa
     public RenderFragment? GetChildren()
     {
         return Body;
+    }
+
+    public async Task Logout()
+    {
+        if (AuthenticationStateProvider is RevalidatingAuthenticationStateProvider revalidatingAuthenticationStateProvider) await revalidatingAuthenticationStateProvider.UpdateAuthenticationState(default);
     }
 
     private async void OnAuthenticationStateChanged(Task<AuthenticationState> authenticationStateTask)
