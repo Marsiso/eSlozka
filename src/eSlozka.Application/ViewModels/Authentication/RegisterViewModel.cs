@@ -126,12 +126,16 @@ public class RegisterViewModel : ViewModelBase
 
     public async Task OnRegisterButtonClick()
     {
+        Busy = true;
+
         var command = _mapper.Map<RegisterCommand>(Form);
         var result = await _sender.Send(command);
 
         if (result.Result == RegisterResultType.Succeeded) _navigation.NavigateTo(Routes.Home, true);
 
         ValidationException = result.ValidationException;
+
+        Busy = false;
     }
 
     public void OnLoginButtonClick()

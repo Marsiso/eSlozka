@@ -192,4 +192,7 @@
     <data name="MainLayoutSidebarDrawerLinkAccount" xml:space="preserve">
         <value>Account</value>
     </data>
+    <data name="ValidationUserEmailExists" xml:space="preserve">
+        <value>Value of the field 'Email' is already taken.</value>
+    </data>
 </root>

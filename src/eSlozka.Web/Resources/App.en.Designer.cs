@@ -420,6 +420,15 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Value of the field &apos;Email&apos; is already taken..
+        /// </summary>
+        internal static string ValidationUserEmailExists {
+            get {
+                return ResourceManager.GetString("ValidationUserEmailExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Field &apos;Email&apos; has invalid format..
         /// </summary>
         internal static string ValidationUserEmailFormat {

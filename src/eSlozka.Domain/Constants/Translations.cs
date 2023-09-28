@@ -164,6 +164,7 @@ public static class Translations
                 public const string Required = EmailBase + nameof(Required);
                 public const string MaxLength = EmailBase + nameof(MaxLength);
                 public const string Format = EmailBase + nameof(Format);
+                public const string Exists = EmailBase + nameof(Exists);
             }
 
             public static class GivenName

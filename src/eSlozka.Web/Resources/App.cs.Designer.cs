@@ -393,7 +393,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heslo.
+        ///   Looks up a localized string similar to Opakování hesla.
         /// </summary>
         internal static string RegisterPasswordRepeatInputLabel {
             get {
@@ -416,6 +416,15 @@ namespace eSlozka.Web.Resources {
         internal static string RegisterTitle {
             get {
                 return ResourceManager.GetString("RegisterTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hodnota pole &apos;Emailová adresa&apos; je již zabraná..
+        /// </summary>
+        internal static string ValidationUserEmailExists {
+            get {
+                return ResourceManager.GetString("ValidationUserEmailExists", resourceCulture);
             }
         }
         

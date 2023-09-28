@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Diagnostics.CodeAnalysis;
+using AutoMapper;
 using eSlozka.Data;
 using eSlozka.Domain.Exceptions;
 using eSlozka.Domain.Extensions;
@@ -23,30 +24,29 @@ public class RegisterCommandHandler : ICommandHandler<RegisterCommand, RegisterR
     private readonly IHashProvider _hasher;
     private readonly ILogger<RegisterCommandHandler> _logger;
     private readonly IMapper _mapper;
-    private readonly IEnumerable<IValidator<RegisterCommand>> _validators;
+    private readonly IValidator<RegisterCommand> _validator;
 
-    public RegisterCommandHandler(IDbContextFactory<DataContext> contextFactory, IMapper mapper, IHashProvider hasher, IEnumerable<IValidator<RegisterCommand>> validators, ILogger<RegisterCommandHandler> logger)
+    public RegisterCommandHandler(IDbContextFactory<DataContext> contextFactory, IMapper mapper, IHashProvider hasher, IValidator<RegisterCommand> validator, ILogger<RegisterCommandHandler> logger)
     {
         _contextFactory = contextFactory;
         _hasher = hasher;
         _logger = logger;
         _mapper = mapper;
-        _validators = validators;
+        _validator = validator;
     }
 
-    public Task<RegisterResult> Handle(RegisterCommand request, CancellationToken cancellationToken)
+    [SuppressMessage("ReSharper", "MethodHasAsyncOverloadWithCancellation", Justification = "SQLite does not support asynchronous operations. Entity Framework Core uses Task.FromResult as wrapper for action methods.")]
+    public async Task<RegisterResult> Handle(RegisterCommand request, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(request, nameof(request));
 
         var validationContext = new ValidationContext<RegisterCommand>(request);
-        var validationErrors = _validators.Select(validator => validator.Validate(validationContext))
+        var validationErrors = (await _validator.ValidateAsync(validationContext, cancellationToken))
             .DistinctErrorsByProperty();
 
-        using var context = _contextFactory.CreateDbContext();
+        if (validationErrors.Count > 0) return new RegisterResult(default, new EntityValidationException(validationErrors));
 
-        if (EmailTakenQuery(context, request.Email)) validationErrors.TryAdd(nameof(request.Email), new[] { "ValidationUserEmailAlreadyTaken" });
-
-        if (validationErrors.Count > 0) return Task.FromResult(new RegisterResult(default, new EntityValidationException(validationErrors)));
+        await using var context = await _contextFactory.CreateDbContextAsync(cancellationToken);
 
         var user = _mapper.Map<User>(request);
 
@@ -55,7 +55,7 @@ public class RegisterCommandHandler : ICommandHandler<RegisterCommand, RegisterR
         context.Users.Add(user);
         context.SaveChanges();
 
-        return Task.FromResult(new RegisterResult(user, default));
+        return new RegisterResult(user, default);
     }
 }
 

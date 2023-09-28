@@ -1,51 +1,82 @@
 ﻿using eSlozka.Core.Commands.Users;
+using eSlozka.Core.Queries.Users;
 using eSlozka.Domain.Enums;
+using eSlozka.Domain.Extensions;
 using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.Localization;
 
 namespace eSlozka.Application.Validations.Users;
 
 public class RegisterCommandValidator : AbstractValidator<RegisterCommand>
 {
-    public RegisterCommandValidator(IStringLocalizer localizer)
+    private readonly IStringLocalizer _localizer;
+    private readonly ISender _sender;
+
+    public RegisterCommandValidator(ISender sender, IStringLocalizer localizer)
     {
+        _sender = sender;
+        _localizer = localizer;
+
         RuleFor(command => command.GivenName)
             .NotEmpty()
-            .WithMessage(localizer[Translations.Validation.User.GivenName.Required])
+            .WithMessage(_localizer[Translations.Validation.User.GivenName.Required])
             .MaximumLength(256)
-            .WithMessage(localizer[Translations.Validation.User.GivenName.MaxLength]);
+            .WithMessage(_localizer[Translations.Validation.User.GivenName.MaxLength]);
 
         RuleFor(command => command.FamilyName)
             .NotEmpty()
-            .WithMessage(localizer[Translations.Validation.User.FamilyName.Required])
+            .WithMessage(_localizer[Translations.Validation.User.FamilyName.Required])
             .MaximumLength(256)
-            .WithMessage(localizer[Translations.Validation.User.FamilyName.MaxLength]);
+            .WithMessage(_localizer[Translations.Validation.User.FamilyName.MaxLength]);
 
         RuleFor(command => command.Email)
             .NotEmpty()
-            .WithMessage(localizer[Translations.Validation.User.Email.Required])
+            .WithMessage(_localizer[Translations.Validation.User.Email.Required])
             .MaximumLength(256)
-            .WithMessage(localizer[Translations.Validation.User.Email.MaxLength])
+            .WithMessage(_localizer[Translations.Validation.User.Email.MaxLength])
             .EmailAddress()
-            .WithMessage(localizer[Translations.Validation.User.Email.Format]);
+            .WithMessage(_localizer[Translations.Validation.User.Email.Format])
+            .MustAsync(async (email, cancellation) => await EmailAddressExistsNot(email, cancellation))
+            .WithMessage(_localizer[Translations.Validation.User.Email.Exists]);
 
         RuleFor(command => command.Password)
             .NotEmpty()
-            .WithMessage(localizer[Translations.Validation.User.Password.Required])
+            .WithMessage(_localizer[Translations.Validation.User.Password.Required])
+            .MinimumLength(8)
+            .WithMessage(_localizer[Translations.Validation.User.Password.MinLength])
             .MaximumLength(256)
-            .WithMessage(localizer[Translations.Validation.User.Password.MaxLength]);
+            .WithMessage(_localizer[Translations.Validation.User.Password.MaxLength])
+            .HasNumericCharacter()
+            .WithMessage(_localizer[Translations.Validation.User.Password.NumericCharacter])
+            .HasSpecialCharacter()
+            .WithMessage(_localizer[Translations.Validation.User.Password.SpecialCharacter])
+            .HasLowerCaseCharacter()
+            .WithMessage(_localizer[Translations.Validation.User.Password.LowerCaseCharacter])
+            .HasUpperCaseCharacter()
+            .WithMessage(_localizer[Translations.Validation.User.Password.UpperCaseCharacter]);
 
         RuleFor(command => command.PasswordRepeat)
             .NotEmpty()
-            .WithMessage(localizer[Translations.Validation.User.PasswordRepetition.Required])
+            .WithMessage(_localizer[Translations.Validation.User.PasswordRepetition.Required])
             .MaximumLength(256)
-            .WithMessage(localizer[Translations.Validation.User.PasswordRepetition.MaxLength]);
+            .WithMessage(_localizer[Translations.Validation.User.PasswordRepetition.MaxLength]);
 
         When(command => !string.IsNullOrWhiteSpace(command.Password) && !string.IsNullOrWhiteSpace(command.PasswordRepeat), () =>
         {
             RuleFor(command => command.PasswordRepeat)
                 .Must((command, passwordRepetition) => passwordRepetition?.Equals(command.Password) ?? false)
-                .WithMessage(localizer[Translations.Validation.User.PasswordRepetition.Match]);
+                .WithMessage(_localizer[Translations.Validation.User.PasswordRepetition.Match]);
         });
+    }
+
+    private async Task<bool> EmailAddressExistsNot(string? email, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(email)) return true;
+
+        var query = new EmailExistsQuery(email);
+        var emailExists = await _sender.Send(query, cancellationToken);
+
+        return !emailExists;
     }
 }

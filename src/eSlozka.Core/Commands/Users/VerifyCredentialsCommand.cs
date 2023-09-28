@@ -23,15 +23,15 @@ public class VerifyCredentialsCommandHandler : ICommandHandler<VerifyCredentials
     private readonly IHashProvider _hasher;
     private readonly ILogger<VerifyCredentialsCommandHandler> _logger;
     private readonly IMapper _mapper;
-    private readonly IEnumerable<IValidator<VerifyCredentialsCommand>> _validators;
+    private readonly IValidator<VerifyCredentialsCommand> _validator;
 
-    public VerifyCredentialsCommandHandler(IDbContextFactory<DataContext> contextFactory, IMapper mapper, IHashProvider hasher, IEnumerable<IValidator<VerifyCredentialsCommand>> validators, ILogger<VerifyCredentialsCommandHandler> logger)
+    public VerifyCredentialsCommandHandler(IDbContextFactory<DataContext> contextFactory, IMapper mapper, IHashProvider hasher, IValidator<VerifyCredentialsCommand> validator, ILogger<VerifyCredentialsCommandHandler> logger)
     {
         _contextFactory = contextFactory;
         _hasher = hasher;
         _logger = logger;
         _mapper = mapper;
-        _validators = validators;
+        _validator = validator;
     }
 
     public Task<VerifyCredentialsResult> Handle(VerifyCredentialsCommand request, CancellationToken cancellationToken)
@@ -39,12 +39,12 @@ public class VerifyCredentialsCommandHandler : ICommandHandler<VerifyCredentials
         ArgumentNullException.ThrowIfNull(request, nameof(request));
 
         var validationContext = new ValidationContext<VerifyCredentialsCommand>(request);
-        var validationErrors = _validators.Select(validator => validator.Validate(validationContext))
+        var validationErrors = _validator.Validate(validationContext)
             .DistinctErrorsByProperty();
 
         using var context = _contextFactory.CreateDbContext();
 
-        var user = EmailTakenQuery(context, request.Email);
+        var user = EmailTakenQuery(context, request.Email!);
 
         if (user is null) validationErrors.TryAdd(nameof(request.Email), new[] { "ValidationUserEmailOrPasswordInvalid" });
 

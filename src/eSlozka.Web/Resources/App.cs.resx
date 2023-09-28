@@ -79,7 +79,7 @@
         <value>Registrovat se</value>
     </data>
     <data name="RegisterPasswordRepeatInputLabel" xml:space="preserve">
-        <value>Heslo</value>
+        <value>Opakování hesla</value>
     </data>
     <data name="RegisterPasswordRepeatInputAdornmentAriaLabel" xml:space="preserve">
         <value>Zobrazit heslo</value>
@@ -191,5 +191,8 @@
     </data>
     <data name="MainLayoutSidebarDrawerLinkAccount" xml:space="preserve">
         <value>Účet</value>
+    </data>
+    <data name="ValidationUserEmailExists" xml:space="preserve">
+        <value>Hodnota pole 'Emailová adresa' je již zabraná.</value>
     </data>
 </root>
