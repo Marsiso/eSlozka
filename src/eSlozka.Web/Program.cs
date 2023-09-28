@@ -3,6 +3,7 @@ using eSlozka.Application.Mappings;
 using eSlozka.Web;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+using Microsoft.Extensions.Localization;
 using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ services.AddSingleton<IConfiguration>(configuration);
 
 services.AddControllers();
 services.AddLocalization(options => options.ResourcesPath = "Resources");
+services.AddTransient<IStringLocalizer, StringLocalizer<App>>();
 
 services.AddAuthenticationCore();
 services.AddRazorPages();

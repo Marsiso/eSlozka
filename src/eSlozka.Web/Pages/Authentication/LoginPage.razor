@@ -1,9 +1,8 @@
 ﻿@attribute [Route(Routes.Authentication.Login)]
 @attribute [AllowAnonymous]
-@using Microsoft.Extensions.Localization
-@using eSlozka.Application.ViewModels
-@using Microsoft.AspNetCore.Authorization
-@inherits eSlozka.Application.ViewModels.PageComponentBase<eSlozka.Application.ViewModels.Authentication.LoginPageViewModel>
+@using static Domain.Enums.Translations.Login
+@using eSlozka.Domain.Constants
+@inherits PageComponentBase<LoginViewModel>
 
 @inject IStringLocalizer<App> Localizer
 
@@ -12,44 +11,41 @@
     </MudHidden>
 </MudBreakpointProvider>
 
-<MudCard Style="@Model.GetComponentWidth()">
-    <MudForm>
-        <MudCardMedia Image="img/space-rocket-background.svg"></MudCardMedia>
-        <MudCardHeader Class="px-8 pt-8">
-            <MudText Color="Color.Surface" Typo="Typo.h5">@Localizer["LoginFormTitle"]</MudText>
+<MudCard Class="pa-8" Style="@Model.GetComponentWidth()">
+    <MudForm ValidationDelay="1000">
+        <MudCardHeader>
+            <MudText Color="Color.Surface" Typo="Typo.h5">@Localizer[Title]</MudText>
         </MudCardHeader>
-        <MudCardContent Class="pa-8">
-            <!-- TODO: Add validation. -->
+        <MudCardContent>
             <MudTextField @bind-Value="Model.Form.Email"
                           For="@(() => Model.Form.Email)"
                           Immediate="true"
                           InputType="InputType.Email"
-                          Label="@Localizer["LoginFormEmailInputLabel"]"
+                          Label="@Localizer[EmailInput.Label]"
                           MaxLength="256"
-                          Placeholder="peter.novotny@centrum.cz"
+                          Placeholder="@Localizer[EmailInput.Placeholder]"
                           DebounceInterval="500"
                           Error="@Model.HasError(nameof(Model.Form.Email))"
-                          ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.Email))]"/>
+                          ErrorText="@Localizer[Model.GetResource(nameof(Model.Form.Email))]"/>
 
-            <!-- TODO: Add validation. -->
             <MudTextField Adornment="Adornment.End"
-                          AdornmentAriaLabel="@Localizer["LoginFormPasswordInputShowPasswordAriaLabel"]"
+                          AdornmentAriaLabel="@Localizer[PasswordInput.AdornmentArialLabel]"
                           AdornmentIcon="@Model.PasswordInputIcon"
                           @bind-Value="Model.Form.Password"
                           For="@(() => Model.Form.Password)"
                           Immediate="true"
                           InputType="@Model.PasswordInputType"
-                          Label="@Localizer["LoginFormPasswordInputLabel"]"
+                          Label="@Localizer[PasswordInput.Label]"
                           MaxLength="256"
                           OnAdornmentClick="@Model.OnPasswordInputShowPasswordClick"
                           DebounceInterval="500"
                           Error="@Model.HasError(nameof(Model.Form.Password))"
-                          ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.Password))]"/>
+                          ErrorText="@Localizer[Model.GetResource(nameof(Model.Form.Password))]"/>
         </MudCardContent>
-        <MudCardActions Class="px-8 pb-8">
+        <MudCardActions>
             <MudStack Class="flex flex-grow-1" Justify="Justify.FlexEnd" Row="true">
-                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Filled" OnClick="@Model.OnLoginButtonClick">@Localizer["LoginFormLoginButton"]</MudButton>
-                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Text" OnClick="@Model.OnRegisterButtonClick">@Localizer["LoginFormRegisterButton"]</MudButton>
+                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Filled" OnClick="@Model.OnLoginButtonClick">@Localizer[LoginButton.Text]</MudButton>
+                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Text" OnClick="@Model.OnRegisterButtonClick">@Localizer[RegisterButton.Text]</MudButton>
             </MudStack>
         </MudCardActions>
     </MudForm>

@@ -60,376 +60,376 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emal.
+        ///   Looks up a localized string similar to Email.
         /// </summary>
-        internal static string LoginFormEmailInputLabel {
+        internal static string LoginEmailInputLabel {
             get {
-                return ResourceManager.GetString("LoginFormEmailInputLabel", resourceCulture);
+                return ResourceManager.GetString("LoginEmailInputLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Required field..
+        ///   Looks up a localized string similar to peter.novotny@outlook.com.
         /// </summary>
-        internal static string LoginFormEmailInputPasswordRequiredError {
+        internal static string LoginEmailInputPlaceholder {
             get {
-                return ResourceManager.GetString("LoginFormEmailInputPasswordRequiredError", resourceCulture);
+                return ResourceManager.GetString("LoginEmailInputPlaceholder", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Log in.
         /// </summary>
-        internal static string LoginFormLoginButton {
+        internal static string LoginLoginButtonText {
             get {
-                return ResourceManager.GetString("LoginFormLoginButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Password.
-        /// </summary>
-        internal static string LoginFormPasswordInputLabel {
-            get {
-                return ResourceManager.GetString("LoginFormPasswordInputLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Required field..
-        /// </summary>
-        internal static string LoginFormPasswordInputPasswordRequiredError {
-            get {
-                return ResourceManager.GetString("LoginFormPasswordInputPasswordRequiredError", resourceCulture);
+                return ResourceManager.GetString("LoginLoginButtonText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Show password.
         /// </summary>
-        internal static string LoginFormPasswordInputShowPasswordAriaLabel {
+        internal static string LoginPasswordInputAdornmentArialLabel {
             get {
-                return ResourceManager.GetString("LoginFormPasswordInputShowPasswordAriaLabel", resourceCulture);
+                return ResourceManager.GetString("LoginPasswordInputAdornmentArialLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        internal static string LoginPasswordInputLabel {
+            get {
+                return ResourceManager.GetString("LoginPasswordInputLabel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
-        internal static string LoginFormRegisterButton {
+        internal static string LoginRegisterButtonText {
             get {
-                return ResourceManager.GetString("LoginFormRegisterButton", resourceCulture);
+                return ResourceManager.GetString("LoginRegisterButtonText", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Log in.
         /// </summary>
-        internal static string LoginFormTitle {
+        internal static string LoginTitle {
             get {
-                return ResourceManager.GetString("LoginFormTitle", resourceCulture);
+                return ResourceManager.GetString("LoginTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logout.
+        ///   Looks up a localized string similar to ESLOZKA.
         /// </summary>
-        internal static string LogoutFormLogoutButton {
+        internal static string MainLayoutAppbarBrand {
             get {
-                return ResourceManager.GetString("LogoutFormLogoutButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to About.
-        /// </summary>
-        internal static string MainLayoutAboutApplication {
-            get {
-                return ResourceManager.GetString("MainLayoutAboutApplication", resourceCulture);
+                return ResourceManager.GetString("MainLayoutAppbarBrand", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Account.
         /// </summary>
-        internal static string MainLayoutAccount {
+        internal static string MainLayoutAppbarDrawerLinkAccount {
             get {
-                return ResourceManager.GetString("MainLayoutAccount", resourceCulture);
+                return ResourceManager.GetString("MainLayoutAppbarDrawerLinkAccount", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Boomarks.
+        ///   Looks up a localized string similar to Log out.
         /// </summary>
-        internal static string MainLayoutBookmarks {
+        internal static string MainLayoutAppbarDrawerLinkLogout {
             get {
-                return ResourceManager.GetString("MainLayoutBookmarks", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Deleted.
-        /// </summary>
-        internal static string MainLayoutDeleted {
-            get {
-                return ResourceManager.GetString("MainLayoutDeleted", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Files.
-        /// </summary>
-        internal static string MainLayoutFiles {
-            get {
-                return ResourceManager.GetString("MainLayoutFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to History.
-        /// </summary>
-        internal static string MainLayoutHistory {
-            get {
-                return ResourceManager.GetString("MainLayoutHistory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logout.
-        /// </summary>
-        internal static string MainLayoutLogout {
-            get {
-                return ResourceManager.GetString("MainLayoutLogout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logs.
-        /// </summary>
-        internal static string MainLayoutLogs {
-            get {
-                return ResourceManager.GetString("MainLayoutLogs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manage code lists.
-        /// </summary>
-        internal static string MainLayoutManageCodeLists {
-            get {
-                return ResourceManager.GetString("MainLayoutManageCodeLists", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manage disk space.
-        /// </summary>
-        internal static string MainLayoutManageRepository {
-            get {
-                return ResourceManager.GetString("MainLayoutManageRepository", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manage task.
-        /// </summary>
-        internal static string MainLayoutManageTasks {
-            get {
-                return ResourceManager.GetString("MainLayoutManageTasks", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manage users.
-        /// </summary>
-        internal static string MainLayoutManageUsers {
-            get {
-                return ResourceManager.GetString("MainLayoutManageUsers", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Notifications.
-        /// </summary>
-        internal static string MainLayoutNotifications {
-            get {
-                return ResourceManager.GetString("MainLayoutNotifications", resourceCulture);
+                return ResourceManager.GetString("MainLayoutAppbarDrawerLinkLogout", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
-        internal static string MainLayoutSettings {
+        internal static string MainLayoutAppbarDrawerLinkSettings {
             get {
-                return ResourceManager.GetString("MainLayoutSettings", resourceCulture);
+                return ResourceManager.GetString("MainLayoutAppbarDrawerLinkSettings", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Shared with me.
+        ///   Looks up a localized string similar to About application.
         /// </summary>
-        internal static string MainLayoutSharedWithMe {
+        internal static string MainLayoutSidebarDrawerLinkAboutApplication {
             get {
-                return ResourceManager.GetString("MainLayoutSharedWithMe", resourceCulture);
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkAboutApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkAccount {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bookmarks.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkBookmarks {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkBookmarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deleted.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkDeleted {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Files.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkFiles {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to History.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkHistory {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log out.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkLogout {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkLogout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logs.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkLogs {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkLogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage selectors.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkManageCodeLists {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkManageCodeLists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage repository.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkManageRepository {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkManageRepository", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Statistics.
         /// </summary>
-        internal static string MainLayoutStatistics {
+        internal static string MainLayoutSidebarDrawerLinkManageStatistics {
             get {
-                return ResourceManager.GetString("MainLayoutStatistics", resourceCulture);
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkManageStatistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage tasks.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkManageTasks {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkManageTasks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage users.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkManageUsers {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkManageUsers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notifications.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkNotifications {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkNotifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkSettings {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shared with me.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkSharedWithMe {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkSharedWithMe", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
-        internal static string RegisterFormEmailInputLabel {
+        internal static string RegisterEmailInputLabel {
             get {
-                return ResourceManager.GetString("RegisterFormEmailInputLabel", resourceCulture);
+                return ResourceManager.GetString("RegisterEmailInputLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Required field..
+        ///   Looks up a localized string similar to peter.novotny@outlook.com.
         /// </summary>
-        internal static string RegisterFormEmailInputRequiredError {
+        internal static string RegisterEmailInputPlaceholder {
             get {
-                return ResourceManager.GetString("RegisterFormEmailInputRequiredError", resourceCulture);
+                return ResourceManager.GetString("RegisterEmailInputPlaceholder", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Family name.
         /// </summary>
-        internal static string RegisterFormFamilyNameInputLabel {
+        internal static string RegisterFamilyNameInputLabel {
             get {
-                return ResourceManager.GetString("RegisterFormFamilyNameInputLabel", resourceCulture);
+                return ResourceManager.GetString("RegisterFamilyNameInputLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Required field..
+        ///   Looks up a localized string similar to Novotny.
         /// </summary>
-        internal static string RegisterFormFamilyNameInputRequiredError {
+        internal static string RegisterFamilyNameInputPlaceholder {
             get {
-                return ResourceManager.GetString("RegisterFormFamilyNameInputRequiredError", resourceCulture);
+                return ResourceManager.GetString("RegisterFamilyNameInputPlaceholder", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Given name.
         /// </summary>
-        internal static string RegisterFormGivenNameInputLabel {
+        internal static string RegisterGivenNameInputLabel {
             get {
-                return ResourceManager.GetString("RegisterFormGivenNameInputLabel", resourceCulture);
+                return ResourceManager.GetString("RegisterGivenNameInputLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Required field..
+        ///   Looks up a localized string similar to Peter.
         /// </summary>
-        internal static string RegisterFormGivenNameInputRequiredError {
+        internal static string RegisterGivenNameInputPlaceholder {
             get {
-                return ResourceManager.GetString("RegisterFormGivenNameInputRequiredError", resourceCulture);
+                return ResourceManager.GetString("RegisterGivenNameInputPlaceholder", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
-        internal static string RegisterFormLoginButton {
+        internal static string RegisterLoginButtonText {
             get {
-                return ResourceManager.GetString("RegisterFormLoginButton", resourceCulture);
+                return ResourceManager.GetString("RegisterLoginButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show password.
+        /// </summary>
+        internal static string RegisterPasswordInputAdornmentAriaLabel {
+            get {
+                return ResourceManager.GetString("RegisterPasswordInputAdornmentAriaLabel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
-        internal static string RegisterFormPasswordInputLabel {
+        internal static string RegisterPasswordInputLabel {
             get {
-                return ResourceManager.GetString("RegisterFormPasswordInputLabel", resourceCulture);
+                return ResourceManager.GetString("RegisterPasswordInputLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Required field..
+        ///   Looks up a localized string similar to Show password repeat.
         /// </summary>
-        internal static string RegisterFormPasswordInputRequiredError {
+        internal static string RegisterPasswordRepeatInputAdornmentAriaLabel {
             get {
-                return ResourceManager.GetString("RegisterFormPasswordInputRequiredError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show password.
-        /// </summary>
-        internal static string RegisterFormPasswordInputShowPasswordAriaLabel {
-            get {
-                return ResourceManager.GetString("RegisterFormPasswordInputShowPasswordAriaLabel", resourceCulture);
+                return ResourceManager.GetString("RegisterPasswordRepeatInputAdornmentAriaLabel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Password repeat.
         /// </summary>
-        internal static string RegisterFormPasswordRepeatInputLabel {
+        internal static string RegisterPasswordRepeatInputLabel {
             get {
-                return ResourceManager.GetString("RegisterFormPasswordRepeatInputLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Required field..
-        /// </summary>
-        internal static string RegisterFormPasswordRepeatInputRequiredError {
-            get {
-                return ResourceManager.GetString("RegisterFormPasswordRepeatInputRequiredError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show password.
-        /// </summary>
-        internal static string RegisterFormPasswordRepeatInputShowPasswordAriaLabel {
-            get {
-                return ResourceManager.GetString("RegisterFormPasswordRepeatInputShowPasswordAriaLabel", resourceCulture);
+                return ResourceManager.GetString("RegisterPasswordRepeatInputLabel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
-        internal static string RegisterFormRegisterButton {
+        internal static string RegisterRegisterButtonText {
             get {
-                return ResourceManager.GetString("RegisterFormRegisterButton", resourceCulture);
+                return ResourceManager.GetString("RegisterRegisterButtonText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
-        internal static string RegisterFormTitle {
+        internal static string RegisterTitle {
             get {
-                return ResourceManager.GetString("RegisterFormTitle", resourceCulture);
+                return ResourceManager.GetString("RegisterTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email has invalid format..
+        ///   Looks up a localized string similar to Field &apos;Email&apos; has invalid format..
         /// </summary>
-        internal static string ValidationUserEmailInvalidFormat {
+        internal static string ValidationUserEmailFormat {
             get {
-                return ResourceManager.GetString("ValidationUserEmailInvalidFormat", resourceCulture);
+                return ResourceManager.GetString("ValidationUserEmailFormat", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email must be at most 256 characters long..
+        ///   Looks up a localized string similar to Field &apos;Email&apos; has maximum length of 256 characters..
         /// </summary>
         internal static string ValidationUserEmailMaxLength {
             get {
@@ -438,16 +438,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email or passoword is invalid..
-        /// </summary>
-        internal static string ValidationUserEmailOrPasswordInvalid {
-            get {
-                return ResourceManager.GetString("ValidationUserEmailOrPasswordInvalid", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Required field..
+        ///   Looks up a localized string similar to Field &apos;Email&apos; is required..
         /// </summary>
         internal static string ValidationUserEmailRequired {
             get {
@@ -456,7 +447,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Family name must be at most 256 characters long..
+        ///   Looks up a localized string similar to Field &apos;Family name&apos; has maximum length of 256 characters..
         /// </summary>
         internal static string ValidationUserFamilyNameMaxLength {
             get {
@@ -465,7 +456,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Required field..
+        ///   Looks up a localized string similar to Field &apos;Family name&apos; is required..
         /// </summary>
         internal static string ValidationUserFamilyNameRequired {
             get {
@@ -474,7 +465,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Given name must be at most 256 characters long..
+        ///   Looks up a localized string similar to Field &apos;Given name&apos; has maximum length of 256 characters..
         /// </summary>
         internal static string ValidationUserGivenNameMaxLength {
             get {
@@ -483,7 +474,7 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Required field..
+        ///   Looks up a localized string similar to Field &apos;Given name&apos; is required..
         /// </summary>
         internal static string ValidationUserGivenNameRequired {
             get {
@@ -492,7 +483,16 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password must be at most 256 characters long..
+        ///   Looks up a localized string similar to Field &apos;Password&apos; must contain at least one lower case character..
+        /// </summary>
+        internal static string ValidationUserPasswordLowerCaseCharacter {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordLowerCaseCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field &apos;Password&apos; has maximum length of 256 characters..
         /// </summary>
         internal static string ValidationUserPasswordMaxLength {
             get {
@@ -501,16 +501,34 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password and its repetion must match..
+        ///   Looks up a localized string similar to Field &apos;Password&apos; has minimum length of 8 characters..
         /// </summary>
-        internal static string ValidationUserPasswordRepetitionDoesNotMatch {
+        internal static string ValidationUserPasswordMinLength {
             get {
-                return ResourceManager.GetString("ValidationUserPasswordRepetitionDoesNotMatch", resourceCulture);
+                return ResourceManager.GetString("ValidationUserPasswordMinLength", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password repetition must be at most 256 characters long..
+        ///   Looks up a localized string similar to Field &apos;Password&apos; must contain at least one numeric character..
+        /// </summary>
+        internal static string ValidationUserPasswordNumericCharacter {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordNumericCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field &apos;Password&apos; must match field &apos;Password repeat&apos;..
+        /// </summary>
+        internal static string ValidationUserPasswordRepetitionMatch {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordRepetitionMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field &apos;Password repeat&apos; has maximum length of 256 characters..
         /// </summary>
         internal static string ValidationUserPasswordRepetitionMaxLength {
             get {
@@ -519,7 +537,16 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Required field..
+        ///   Looks up a localized string similar to Field &apos;Password repeat&apos; has maximum length of 256 characters..
+        /// </summary>
+        internal static string ValidationUserPasswordRepetitionMinLength {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordRepetitionMinLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field &apos;Password repetion&apos; is required..
         /// </summary>
         internal static string ValidationUserPasswordRepetitionRequired {
             get {
@@ -528,11 +555,29 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Required field..
+        ///   Looks up a localized string similar to Field &apos;Password&apos; is required..
         /// </summary>
         internal static string ValidationUserPasswordRequired {
             get {
                 return ResourceManager.GetString("ValidationUserPasswordRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field &apos;Password&apos; must contain at least one special character..
+        /// </summary>
+        internal static string ValidationUserPasswordSpecialCharacter {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordSpecialCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field &apos;Password&apos; must contain at least one upper case character..
+        /// </summary>
+        internal static string ValidationUserPasswordUpperCaseCharacter {
+            get {
+                return ResourceManager.GetString("ValidationUserPasswordUpperCaseCharacter", resourceCulture);
             }
         }
     }

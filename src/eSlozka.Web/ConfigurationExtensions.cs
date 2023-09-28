@@ -4,6 +4,7 @@ using eSlozka.Application.ViewModels;
 using eSlozka.Core.Commands.Users;
 using eSlozka.Core.Utilities;
 using eSlozka.Data;
+using eSlozka.Domain.Constants;
 using eSlozka.Domain.Services;
 using FluentValidation;
 using Microsoft.AspNetCore.Localization;
@@ -90,11 +91,11 @@ public static class ConfigurationExtensions
 
     public static WebApplication UseLocalizationResources(this WebApplication application)
     {
-        var supportedCultures = new[] { new CultureInfo("en"), new CultureInfo("cs") };
+        var supportedCultures = new[] { new CultureInfo(Locales.English), new CultureInfo(Locales.Czech) };
 
         application.UseRequestLocalization(new RequestLocalizationOptions
         {
-            DefaultRequestCulture = new RequestCulture("en"),
+            DefaultRequestCulture = new RequestCulture(Locales.Default),
             SupportedCultures = supportedCultures,
             SupportedUICultures = supportedCultures
         });

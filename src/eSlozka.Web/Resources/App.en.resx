@@ -18,163 +18,178 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="MainLayoutFiles" xml:space="preserve">
-        <value>Files</value>
-    </data>
-    <data name="MainLayoutAboutApplication" xml:space="preserve">
-        <value>About</value>
-    </data>
-    <data name="MainLayoutAccount" xml:space="preserve">
-        <value>Account</value>
-    </data>
-    <data name="MainLayoutBookmarks" xml:space="preserve">
-        <value>Boomarks</value>
-    </data>
-    <data name="MainLayoutDeleted" xml:space="preserve">
-        <value>Deleted</value>
-    </data>
-    <data name="MainLayoutHistory" xml:space="preserve">
-        <value>History</value>
-    </data>
-    <data name="MainLayoutLogout" xml:space="preserve">
-        <value>Logout</value>
-    </data>
-    <data name="MainLayoutLogs" xml:space="preserve">
-        <value>Logs</value>
-    </data>
-    <data name="MainLayoutManageCodeLists" xml:space="preserve">
-        <value>Manage code lists</value>
-    </data>
-    <data name="MainLayoutManageRepository" xml:space="preserve">
-        <value>Manage disk space</value>
-    </data>
-    <data name="MainLayoutManageTasks" xml:space="preserve">
-        <value>Manage task</value>
-    </data>
-    <data name="MainLayoutManageUsers" xml:space="preserve">
-        <value>Manage users</value>
-    </data>
-    <data name="MainLayoutNotifications" xml:space="preserve">
-        <value>Notifications</value>
-    </data>
-    <data name="MainLayoutSettings" xml:space="preserve">
-        <value>Settings</value>
-    </data>
-    <data name="MainLayoutSharedWithMe" xml:space="preserve">
-        <value>Shared with me</value>
-    </data>
-    <data name="MainLayoutStatistics" xml:space="preserve">
-        <value>Statistics</value>
-    </data>
-    <data name="LoginFormEmailInputLabel" xml:space="preserve">
-        <value>Emal</value>
-    </data>
-    <data name="LoginFormEmailInputPasswordRequiredError" xml:space="preserve">
-        <value>Required field.</value>
-    </data>
-    <data name="LoginFormPasswordInputPasswordRequiredError" xml:space="preserve">
-        <value>Required field.</value>
-    </data>
-    <data name="LoginFormLoginButton" xml:space="preserve">
-        <value>Login</value>
-    </data>
-    <data name="LoginFormPasswordInputLabel" xml:space="preserve">
-        <value>Password</value>
-    </data>
-    <data name="LoginFormPasswordInputShowPasswordAriaLabel" xml:space="preserve">
-        <value>Show password</value>
-    </data>
-    <data name="LoginFormRegisterButton" xml:space="preserve">
-        <value>Register</value>
-    </data>
-    <data name="LoginFormTitle" xml:space="preserve">
-        <value>Login</value>
-    </data>
-    <data name="RegisterFormTitle" xml:space="preserve">
-        <value>Register</value>
-    </data>
-    <data name="RegisterFormPasswordRepeatInputShowPasswordAriaLabel" xml:space="preserve">
-        <value>Show password</value>
-    </data>
-    <data name="RegisterFormPasswordRepeatInputRequiredError" xml:space="preserve">
-        <value>Required field.</value>
-    </data>
-    <data name="RegisterFormPasswordInputRequiredError" xml:space="preserve">
-        <value>Required field.</value>
-    </data>
-    <data name="RegisterFormGivenNameInputRequiredError" xml:space="preserve">
-        <value>Required field.</value>
-    </data>
-    <data name="RegisterFormFamilyNameInputRequiredError" xml:space="preserve">
-        <value>Required field.</value>
-    </data>
-    <data name="RegisterFormEmailInputRequiredError" xml:space="preserve">
-        <value>Required field.</value>
-    </data>
-    <data name="RegisterFormEmailInputLabel" xml:space="preserve">
-        <value>Email</value>
-    </data>
-    <data name="RegisterFormFamilyNameInputLabel" xml:space="preserve">
-        <value>Family name</value>
-    </data>
-    <data name="RegisterFormGivenNameInputLabel" xml:space="preserve">
-        <value>Given name</value>
-    </data>
-    <data name="RegisterFormPasswordInputLabel" xml:space="preserve">
-        <value>Password</value>
-    </data>
-    <data name="RegisterFormPasswordRepeatInputLabel" xml:space="preserve">
-        <value>Password repeat</value>
-    </data>
-    <data name="RegisterFormPasswordInputShowPasswordAriaLabel" xml:space="preserve">
-        <value>Show password</value>
-    </data>
-    <data name="RegisterFormLoginButton" xml:space="preserve">
-        <value>Login</value>
-    </data>
-    <data name="RegisterFormRegisterButton" xml:space="preserve">
-        <value>Register</value>
-    </data>
-    <data name="LogoutFormLogoutButton" xml:space="preserve">
-        <value>Logout</value>
-    </data>
-    <data name="ValidationUserGivenNameRequired" xml:space="preserve">
-        <value>Required field.</value>
-    </data>
-    <data name="ValidationUserGivenNameMaxLength" xml:space="preserve">
-        <value>Given name must be at most 256 characters long.</value>
+    <data name="ValidationUserEmailRequired" xml:space="preserve">
+        <value>Field 'Email' is required.</value>
     </data>
     <data name="ValidationUserFamilyNameRequired" xml:space="preserve">
-        <value>Required field.</value>
+        <value>Field 'Family name' is required.</value>
     </data>
-    <data name="ValidationUserFamilyNameMaxLength" xml:space="preserve">
-        <value>Family name must be at most 256 characters long.</value>
-    </data>
-    <data name="ValidationUserEmailRequired" xml:space="preserve">
-        <value>Required field.</value>
-    </data>
-    <data name="ValidationUserEmailMaxLength" xml:space="preserve">
-        <value>Email must be at most 256 characters long.</value>
-    </data>
-    <data name="ValidationUserEmailInvalidFormat" xml:space="preserve">
-        <value>Email has invalid format.</value>
+    <data name="ValidationUserGivenNameRequired" xml:space="preserve">
+        <value>Field 'Given name' is required.</value>
     </data>
     <data name="ValidationUserPasswordRequired" xml:space="preserve">
-        <value>Required field.</value>
-    </data>
-    <data name="ValidationUserPasswordMaxLength" xml:space="preserve">
-        <value>Password must be at most 256 characters long.</value>
+        <value>Field 'Password' is required.</value>
     </data>
     <data name="ValidationUserPasswordRepetitionRequired" xml:space="preserve">
-        <value>Required field.</value>
+        <value>Field 'Password repetion' is required.</value>
+    </data>
+    <data name="ValidationUserEmailMaxLength" xml:space="preserve">
+        <value>Field 'Email' has maximum length of 256 characters.</value>
+    </data>
+    <data name="ValidationUserFamilyNameMaxLength" xml:space="preserve">
+        <value>Field 'Family name' has maximum length of 256 characters.</value>
+    </data>
+    <data name="ValidationUserGivenNameMaxLength" xml:space="preserve">
+        <value>Field 'Given name' has maximum length of 256 characters.</value>
+    </data>
+    <data name="ValidationUserPasswordMaxLength" xml:space="preserve">
+        <value>Field 'Password' has maximum length of 256 characters.</value>
     </data>
     <data name="ValidationUserPasswordRepetitionMaxLength" xml:space="preserve">
-        <value>Password repetition must be at most 256 characters long.</value>
+        <value>Field 'Password repeat' has maximum length of 256 characters.</value>
     </data>
-    <data name="ValidationUserPasswordRepetitionDoesNotMatch" xml:space="preserve">
-        <value>Password and its repetion must match.</value>
+    <data name="ValidationUserEmailFormat" xml:space="preserve">
+        <value>Field 'Email' has invalid format.</value>
     </data>
-    <data name="ValidationUserEmailOrPasswordInvalid" xml:space="preserve">
-        <value>Email or passoword is invalid.</value>
+    <data name="ValidationUserPasswordSpecialCharacter" xml:space="preserve">
+        <value>Field 'Password' must contain at least one special character.</value>
+    </data>
+    <data name="ValidationUserPasswordUpperCaseCharacter" xml:space="preserve">
+        <value>Field 'Password' must contain at least one upper case character.</value>
+    </data>
+    <data name="ValidationUserPasswordNumericCharacter" xml:space="preserve">
+        <value>Field 'Password' must contain at least one numeric character.</value>
+    </data>
+    <data name="ValidationUserPasswordLowerCaseCharacter" xml:space="preserve">
+        <value>Field 'Password' must contain at least one lower case character.</value>
+    </data>
+    <data name="ValidationUserPasswordMinLength" xml:space="preserve">
+        <value>Field 'Password' has minimum length of 8 characters.</value>
+    </data>
+    <data name="ValidationUserPasswordRepetitionMatch" xml:space="preserve">
+        <value>Field 'Password' must match field 'Password repeat'.</value>
+    </data>
+    <data name="ValidationUserPasswordRepetitionMinLength" xml:space="preserve">
+        <value>Field 'Password repeat' has maximum length of 256 characters.</value>
+    </data>
+    <data name="RegisterTitle" xml:space="preserve">
+        <value>Register</value>
+    </data>
+    <data name="RegisterRegisterButtonText" xml:space="preserve">
+        <value>Register</value>
+    </data>
+    <data name="RegisterPasswordRepeatInputLabel" xml:space="preserve">
+        <value>Password repeat</value>
+    </data>
+    <data name="RegisterPasswordRepeatInputAdornmentAriaLabel" xml:space="preserve">
+        <value>Show password repeat</value>
+    </data>
+    <data name="RegisterPasswordInputLabel" xml:space="preserve">
+        <value>Password</value>
+    </data>
+    <data name="RegisterPasswordInputAdornmentAriaLabel" xml:space="preserve">
+        <value>Show password</value>
+    </data>
+    <data name="RegisterLoginButtonText" xml:space="preserve">
+        <value>Login</value>
+    </data>
+    <data name="RegisterGivenNameInputPlaceholder" xml:space="preserve">
+        <value>Peter</value>
+    </data>
+    <data name="RegisterGivenNameInputLabel" xml:space="preserve">
+        <value>Given name</value>
+    </data>
+    <data name="RegisterFamilyNameInputPlaceholder" xml:space="preserve">
+        <value>Novotny</value>
+    </data>
+    <data name="RegisterFamilyNameInputLabel" xml:space="preserve">
+        <value>Family name</value>
+    </data>
+    <data name="RegisterEmailInputPlaceholder" xml:space="preserve">
+        <value>peter.novotny@outlook.com</value>
+    </data>
+    <data name="RegisterEmailInputLabel" xml:space="preserve">
+        <value>Email</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkSharedWithMe" xml:space="preserve">
+        <value>Shared with me</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkSettings" xml:space="preserve">
+        <value>Settings</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkNotifications" xml:space="preserve">
+        <value>Notifications</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkManageUsers" xml:space="preserve">
+        <value>Manage users</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkManageTasks" xml:space="preserve">
+        <value>Manage tasks</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkManageStatistics" xml:space="preserve">
+        <value>Statistics</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkManageRepository" xml:space="preserve">
+        <value>Manage repository</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkManageCodeLists" xml:space="preserve">
+        <value>Manage selectors</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkLogs" xml:space="preserve">
+        <value>Logs</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkLogout" xml:space="preserve">
+        <value>Log out</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkHistory" xml:space="preserve">
+        <value>History</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkFiles" xml:space="preserve">
+        <value>Files</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkDeleted" xml:space="preserve">
+        <value>Deleted</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkBookmarks" xml:space="preserve">
+        <value>Bookmarks</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkAboutApplication" xml:space="preserve">
+        <value>About application</value>
+    </data>
+    <data name="MainLayoutAppbarDrawerLinkSettings" xml:space="preserve">
+        <value>Settings</value>
+    </data>
+    <data name="MainLayoutAppbarDrawerLinkLogout" xml:space="preserve">
+        <value>Log out</value>
+    </data>
+    <data name="MainLayoutAppbarDrawerLinkAccount" xml:space="preserve">
+        <value>Account</value>
+    </data>
+    <data name="LoginTitle" xml:space="preserve">
+        <value>Log in</value>
+    </data>
+    <data name="MainLayoutAppbarBrand" xml:space="preserve">
+        <value>ESLOZKA</value>
+    </data>
+    <data name="LoginRegisterButtonText" xml:space="preserve">
+        <value>Register</value>
+    </data>
+    <data name="LoginPasswordInputLabel" xml:space="preserve">
+        <value>Password</value>
+    </data>
+    <data name="LoginPasswordInputAdornmentArialLabel" xml:space="preserve">
+        <value>Show password</value>
+    </data>
+    <data name="LoginLoginButtonText" xml:space="preserve">
+        <value>Log in</value>
+    </data>
+    <data name="LoginEmailInputPlaceholder" xml:space="preserve">
+        <value>peter.novotny@outlook.com</value>
+    </data>
+    <data name="LoginEmailInputLabel" xml:space="preserve">
+        <value>Email</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkAccount" xml:space="preserve">
+        <value>Account</value>
     </data>
 </root>

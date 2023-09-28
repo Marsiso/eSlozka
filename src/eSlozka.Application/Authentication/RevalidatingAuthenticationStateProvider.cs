@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using eSlozka.Domain.Constants;
 using eSlozka.Domain.DataTransferObjects.Sessions;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
@@ -12,7 +13,6 @@ public class RevalidatingAuthenticationStateProvider : AuthenticationStateProvid
 
     private readonly ClaimsPrincipal _anonymous = new(new ClaimsIdentity());
     private readonly ILogger<RevalidatingAuthenticationStateProvider> _logger;
-
     private readonly ProtectedSessionStorage _sessionStorage;
 
     public RevalidatingAuthenticationStateProvider(ProtectedSessionStorage sessionStorage, ILogger<RevalidatingAuthenticationStateProvider> logger)
@@ -33,15 +33,15 @@ public class RevalidatingAuthenticationStateProvider : AuthenticationStateProvid
 
             var claims = new List<Claim>
             {
-                new(nameof(userSession.ProtectedUserID), userSession.ProtectedUserID),
-                new(nameof(userSession.GivenName), userSession.GivenName),
-                new(nameof(userSession.FamilyName), userSession.FamilyName),
-                new(nameof(userSession.Email), userSession.Email),
-                new(nameof(userSession.EmailConfirmed), userSession.EmailConfirmed.ToString()),
-                new(nameof(userSession.DarkThemeEnabled), userSession.DarkThemeEnabled.ToString())
+                new(UserClaimTypes.ProtectedIdentifier, userSession.ProtectedUserID),
+                new(UserClaimTypes.GivenName, userSession.GivenName),
+                new(UserClaimTypes.FamilyName, userSession.FamilyName),
+                new(UserClaimTypes.Email, userSession.Email),
+                new(UserClaimTypes.EmailConfirmed, userSession.EmailConfirmed.ToString()),
+                new(UserClaimTypes.DarkThemeEnabled, userSession.DarkThemeEnabled.ToString())
             };
 
-            if (!string.IsNullOrWhiteSpace(userSession.ProfilePhoto)) claims.Add(new Claim(nameof(userSession.ProfilePhoto), userSession.ProfilePhoto));
+            if (!string.IsNullOrWhiteSpace(userSession.ProfilePhoto)) claims.Add(new Claim(UserClaimTypes.ProfilePhoto, userSession.ProfilePhoto));
 
             var claimsIdentity = new ClaimsIdentity(claims, AuthenticationType);
             var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
@@ -65,15 +65,15 @@ public class RevalidatingAuthenticationStateProvider : AuthenticationStateProvid
 
             var claims = new List<Claim>
             {
-                new(nameof(userSession.ProtectedUserID), userSession.ProtectedUserID),
-                new(nameof(userSession.GivenName), userSession.GivenName),
-                new(nameof(userSession.FamilyName), userSession.FamilyName),
-                new(nameof(userSession.Email), userSession.Email),
-                new(nameof(userSession.EmailConfirmed), userSession.EmailConfirmed.ToString()),
-                new(nameof(userSession.DarkThemeEnabled), userSession.DarkThemeEnabled.ToString())
+                new(UserClaimTypes.ProtectedIdentifier, userSession.ProtectedUserID),
+                new(UserClaimTypes.GivenName, userSession.GivenName),
+                new(UserClaimTypes.FamilyName, userSession.FamilyName),
+                new(UserClaimTypes.Email, userSession.Email),
+                new(UserClaimTypes.EmailConfirmed, userSession.EmailConfirmed.ToString()),
+                new(UserClaimTypes.DarkThemeEnabled, userSession.DarkThemeEnabled.ToString())
             };
 
-            if (!string.IsNullOrWhiteSpace(userSession.ProfilePhoto)) claims.Add(new Claim(nameof(userSession.ProfilePhoto), userSession.ProfilePhoto));
+            if (!string.IsNullOrWhiteSpace(userSession.ProfilePhoto)) claims.Add(new Claim(UserClaimTypes.ProfilePhoto, userSession.ProfilePhoto));
 
             var claimsIdentity = new ClaimsIdentity(claims, AuthenticationType);
             var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);

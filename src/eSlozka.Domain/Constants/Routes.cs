@@ -1,4 +1,4 @@
-﻿namespace eSlozka.Application.ViewModels;
+﻿namespace eSlozka.Domain.Constants;
 
 public static class Routes
 {

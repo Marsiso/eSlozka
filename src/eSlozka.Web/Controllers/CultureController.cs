@@ -1,4 +1,5 @@
-﻿using eSlozka.Web.Controllers.Common;
+﻿using eSlozka.Domain.Constants;
+using eSlozka.Web.Controllers.Common;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +20,6 @@ public class CultureController : WebControllerBase<CultureController>
             HttpContext.Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName, CookieRequestCultureProvider.MakeCookieValue(cultureInfo));
         }
 
-        return LocalRedirect(redirectUri ?? "/");
+        return LocalRedirect(redirectUri ?? Routes.Home);
     }
 }

@@ -46,11 +46,7 @@ public class RegisterCommandHandler : ICommandHandler<RegisterCommand, RegisterR
 
         if (EmailTakenQuery(context, request.Email)) validationErrors.TryAdd(nameof(request.Email), new[] { "ValidationUserEmailAlreadyTaken" });
 
-        if (validationErrors.Count > 0)
-            return Task.FromResult(new RegisterResult(
-                RegisterResultType.Failed,
-                default,
-                new EntityValidationException(validationErrors)));
+        if (validationErrors.Count > 0) return Task.FromResult(new RegisterResult(default, new EntityValidationException(validationErrors)));
 
         var user = _mapper.Map<User>(request);
 
@@ -59,17 +55,23 @@ public class RegisterCommandHandler : ICommandHandler<RegisterCommand, RegisterR
         context.Users.Add(user);
         context.SaveChanges();
 
-        return Task.FromResult(new RegisterResult(
-            RegisterResultType.Succeeded,
-            user,
-            default));
+        return Task.FromResult(new RegisterResult(user, default));
     }
 }
 
-public record struct RegisterResult(RegisterResultType Result, User? User, EntityValidationException? ValidationException);
+public readonly record struct RegisterResult(User? User, EntityValidationException? ValidationException)
+{
+    public RegisterResultType Result => (User, ValidationException) switch
+    {
+        (not null, null) => RegisterResultType.Succeeded,
+        (null, not null) => RegisterResultType.Failed,
+        (_, _) => RegisterResultType.InternalServerError
+    };
+}
 
 public enum RegisterResultType
 {
     Succeeded,
-    Failed
+    Failed,
+    InternalServerError
 }

@@ -18,163 +18,178 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="MainLayoutFiles" xml:space="preserve">
-        <value>Soubory</value>
-    </data>
-    <data name="MainLayoutAboutApplication" xml:space="preserve">
-        <value>O aplikaci</value>
-    </data>
-    <data name="MainLayoutAccount" xml:space="preserve">
-        <value>Účet</value>
-    </data>
-    <data name="MainLayoutBookmarks" xml:space="preserve">
-        <value>Záložky</value>
-    </data>
-    <data name="MainLayoutDeleted" xml:space="preserve">
-        <value>Smazané</value>
-    </data>
-    <data name="MainLayoutHistory" xml:space="preserve">
-        <value>Historie</value>
-    </data>
-    <data name="MainLayoutLogout" xml:space="preserve">
-        <value>Odhlásit se</value>
-    </data>
-    <data name="MainLayoutLogs" xml:space="preserve">
-        <value>Logy</value>
-    </data>
-    <data name="MainLayoutManageCodeLists" xml:space="preserve">
-        <value>Spravovat výběrovníky</value>
-    </data>
-    <data name="MainLayoutManageRepository" xml:space="preserve">
-        <value>Spravovat úložiště</value>
-    </data>
-    <data name="MainLayoutManageTasks" xml:space="preserve">
-        <value>Spravovat úlohy</value>
-    </data>
-    <data name="MainLayoutManageUsers" xml:space="preserve">
-        <value>Spravovat uživatele</value>
-    </data>
-    <data name="MainLayoutNotifications" xml:space="preserve">
-        <value>Upozornění</value>
-    </data>
-    <data name="MainLayoutSettings" xml:space="preserve">
-        <value>Nastavení</value>
-    </data>
-    <data name="MainLayoutSharedWithMe" xml:space="preserve">
-        <value>Sdíleno se mnou</value>
-    </data>
-    <data name="MainLayoutStatistics" xml:space="preserve">
-        <value>Statistika</value>
-    </data>
-    <data name="LoginFormRegisterButton" xml:space="preserve">
-        <value>Registrovat se</value>
-    </data>
-    <data name="LoginFormPasswordInputShowPasswordAriaLabel" xml:space="preserve">
-        <value>Zobrazit heslo</value>
-    </data>
-    <data name="LoginFormPasswordInputPasswordRequiredError" xml:space="preserve">
-        <value>Povinné pole.</value>
-    </data>
-    <data name="LoginFormEmailInputPasswordRequiredError" xml:space="preserve">
-        <value>Povinné pole.</value>
-    </data>
-    <data name="LoginFormPasswordInputLabel" xml:space="preserve">
-        <value>Heslo</value>
-    </data>
-    <data name="LoginFormLoginButton" xml:space="preserve">
-        <value>Přihlásit se</value>
-    </data>
-    <data name="LoginFormEmailInputLabel" xml:space="preserve">
-        <value>Emailová adresa</value>
-    </data>
-    <data name="LoginFormTitle" xml:space="preserve">
-        <value>Přihlásit se</value>
-    </data>
-    <data name="RegisterFormTitle" xml:space="preserve">
-        <value>Registrovat se</value>
-    </data>
-    <data name="RegisterFormPasswordRepeatInputShowPasswordAriaLabel" xml:space="preserve">
-        <value>Zobrazit heslo</value>
-    </data>
-    <data name="RegisterFormPasswordRepeatInputRequiredError" xml:space="preserve">
-        <value>Povinné pole.</value>
-    </data>
-    <data name="RegisterFormPasswordInputRequiredError" xml:space="preserve">
-        <value>Povinné pole.</value>
-    </data>
-    <data name="RegisterFormGivenNameInputRequiredError" xml:space="preserve">
-        <value>Povinné pole.</value>
-    </data>
-    <data name="RegisterFormFamilyNameInputRequiredError" xml:space="preserve">
-        <value>Povinné pole.</value>
-    </data>
-    <data name="RegisterFormEmailInputRequiredError" xml:space="preserve">
-        <value>Povinné pole.</value>
-    </data>
-    <data name="RegisterFormEmailInputLabel" xml:space="preserve">
-        <value>Emailová adresa.</value>
-    </data>
-    <data name="RegisterFormFamilyNameInputLabel" xml:space="preserve">
-        <value>Příjmení</value>
-    </data>
-    <data name="RegisterFormGivenNameInputLabel" xml:space="preserve">
-        <value>Jméno</value>
-    </data>
-    <data name="RegisterFormPasswordInputLabel" xml:space="preserve">
-        <value>Heslo</value>
-    </data>
-    <data name="RegisterFormPasswordRepeatInputLabel" xml:space="preserve">
-        <value>Opakování hesla</value>
-    </data>
-    <data name="RegisterFormPasswordInputShowPasswordAriaLabel" xml:space="preserve">
-        <value>Zobrazit heslo</value>
-    </data>
-    <data name="RegisterFormLoginButton" xml:space="preserve">
-        <value>Přihlásit se</value>
-    </data>
-    <data name="RegisterFormRegisterButton" xml:space="preserve">
-        <value>Registrovat se</value>
-    </data>
-    <data name="LogoutFormLogoutButton" xml:space="preserve">
-        <value>Odhlásit se</value>
-    </data>
-    <data name="ValidationUserPasswordRepetitionDoesNotMatch" xml:space="preserve">
-        <value>Hesla se musí shodovat.</value>
-    </data>
-    <data name="ValidationUserPasswordMaxLength" xml:space="preserve">
-        <value>Heslo může být nejvýše 256 znaků dlouhé.</value>
-    </data>
-    <data name="ValidationUserFamilyNameMaxLength" xml:space="preserve">
-        <value>Příjmění může být nejvýše 256 znaků dlouhé.</value>
-    </data>
-    <data name="ValidationUserEmailMaxLength" xml:space="preserve">
-        <value>Emailová adresa může být nejvýše 256 znaků dlouhé.</value>
-    </data>
-    <data name="ValidationUserPasswordRepetitionMaxLength" xml:space="preserve">
-        <value>Opakování hesla může být nejvýše 256 znaků dlouhé.</value>
-    </data>
-    <data name="ValidationUserPasswordRepetitionRequired" xml:space="preserve">
-        <value>Povinné pole.</value>
-    </data>
-    <data name="ValidationUserPasswordRequired" xml:space="preserve">
-        <value>Povinné pole.</value>
-    </data>
-    <data name="ValidationUserGivenNameRequired" xml:space="preserve">
-        <value>Povinné pole.</value>
+    <data name="ValidationUserEmailRequired" xml:space="preserve">
+        <value>Pole 'Emailová adresa' je povinné.</value>
     </data>
     <data name="ValidationUserFamilyNameRequired" xml:space="preserve">
-        <value>Povinné pole.</value>
+        <value>Pole 'Příjmení' je povinné.</value>
     </data>
-    <data name="ValidationUserEmailInvalidFormat" xml:space="preserve">
-        <value>Emailová adresa má neplatný formát.</value>
+    <data name="ValidationUserGivenNameRequired" xml:space="preserve">
+        <value>Pole 'Jméno' je povinné.</value>
     </data>
-    <data name="ValidationUserEmailRequired" xml:space="preserve">
-        <value>Povinné pole.</value>
+    <data name="ValidationUserPasswordRequired" xml:space="preserve">
+        <value>Pole 'Opakování hesla' je povinné.</value>
+    </data>
+    <data name="ValidationUserPasswordRepetitionRequired" xml:space="preserve">
+        <value>Pole 'Heslo' je povinné.</value>
+    </data>
+    <data name="ValidationUserEmailMaxLength" xml:space="preserve">
+        <value>Pole 'Emailová adresa' může obsahovat nejvýše 256 znaků.</value>
+    </data>
+    <data name="ValidationUserFamilyNameMaxLength" xml:space="preserve">
+        <value>Pole 'Příjmení' může obsahovat nejvýše 256 znaků.</value>
     </data>
     <data name="ValidationUserGivenNameMaxLength" xml:space="preserve">
-        <value>Jméno může být nejvýše 256 znaků dlouhé.</value>
+        <value>Pole 'Jméno' může obsahovat nejvýše 256 znaků.</value>
     </data>
-    <data name="ValidationUserEmailOrPasswordInvalid" xml:space="preserve">
-        <value>Neplatné uživatelské jméno nebo heslo.</value>
+    <data name="ValidationUserPasswordMaxLength" xml:space="preserve">
+        <value>Pole 'Heslo' může obsahovat nejvýše 256 znaků.</value>
+    </data>
+    <data name="ValidationUserPasswordRepetitionMaxLength" xml:space="preserve">
+        <value>Pole 'Opakování hesla' může obsahovat nejvýše 256 znaků.</value>
+    </data>
+    <data name="ValidationUserEmailFormat" xml:space="preserve">
+        <value>Pole 'Emailová adresa' má neplatný formát.</value>
+    </data>
+    <data name="ValidationUserPasswordNumericCharacter" xml:space="preserve">
+        <value>Pole 'Heslo' musí obsahovat nejméně 1 číselný znak.</value>
+    </data>
+    <data name="ValidationUserPasswordRepetitionMatch" xml:space="preserve">
+        <value>Pole 'Heslo' musí být shodné s polem 'Opakování hesla'.</value>
+    </data>
+    <data name="ValidationUserPasswordMinLength" xml:space="preserve">
+        <value>Pole 'Heslo' může obsahovat nejméně 8 znaků.</value>
+    </data>
+    <data name="ValidationUserPasswordLowerCaseCharacter" xml:space="preserve">
+        <value>Pole 'Heslo' musí obsahovat nejméně 1malé písmeno.</value>
+    </data>
+    <data name="ValidationUserPasswordSpecialCharacter" xml:space="preserve">
+        <value>Pole 'Heslo' musí obsahovat nejméně speciální znak.</value>
+    </data>
+    <data name="ValidationUserPasswordUpperCaseCharacter" xml:space="preserve">
+        <value>Pole 'Heslo' musí obsahovat nejméně velké písmeno.</value>
+    </data>
+    <data name="ValidationUserPasswordRepetitionMinLength" xml:space="preserve">
+        <value>Pole 'Opakování hesla' může obsahovat nejvýše 256 znaků.</value>
+    </data>
+    <data name="RegisterTitle" xml:space="preserve">
+        <value>Registrovat se</value>
+    </data>
+    <data name="RegisterRegisterButtonText" xml:space="preserve">
+        <value>Registrovat se</value>
+    </data>
+    <data name="RegisterPasswordRepeatInputLabel" xml:space="preserve">
+        <value>Heslo</value>
+    </data>
+    <data name="RegisterPasswordRepeatInputAdornmentAriaLabel" xml:space="preserve">
+        <value>Zobrazit heslo</value>
+    </data>
+    <data name="RegisterPasswordInputLabel" xml:space="preserve">
+        <value>Heslo</value>
+    </data>
+    <data name="RegisterPasswordInputAdornmentAriaLabel" xml:space="preserve">
+        <value>Zobrazit heslo</value>
+    </data>
+    <data name="RegisterLoginButtonText" xml:space="preserve">
+        <value>Přihlásit se</value>
+    </data>
+    <data name="RegisterGivenNameInputPlaceholder" xml:space="preserve">
+        <value>Petr</value>
+    </data>
+    <data name="RegisterGivenNameInputLabel" xml:space="preserve">
+        <value>Jméno</value>
+    </data>
+    <data name="RegisterFamilyNameInputPlaceholder" xml:space="preserve">
+        <value>Novotný</value>
+    </data>
+    <data name="RegisterFamilyNameInputLabel" xml:space="preserve">
+        <value>Příjmení</value>
+    </data>
+    <data name="RegisterEmailInputPlaceholder" xml:space="preserve">
+        <value>petr.novotny@centrum.cz</value>
+    </data>
+    <data name="RegisterEmailInputLabel" xml:space="preserve">
+        <value>Emailová adresa</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkSharedWithMe" xml:space="preserve">
+        <value>Sdíleno se mnou</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkSettings" xml:space="preserve">
+        <value>Nastavení</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkNotifications" xml:space="preserve">
+        <value>Upozornění</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkManageUsers" xml:space="preserve">
+        <value>Spravovat uživatele</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkManageTasks" xml:space="preserve">
+        <value>Spravovat úlohy</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkManageStatistics" xml:space="preserve">
+        <value>Statistika</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkManageRepository" xml:space="preserve">
+        <value>Spravovat úložiště</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkManageCodeLists" xml:space="preserve">
+        <value>Spravovat výběrovníky</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkLogs" xml:space="preserve">
+        <value>Logy</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkLogout" xml:space="preserve">
+        <value>Odhlásit se</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkHistory" xml:space="preserve">
+        <value>Historie</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkFiles" xml:space="preserve">
+        <value>Soubory</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkDeleted" xml:space="preserve">
+        <value>Smazané</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkBookmarks" xml:space="preserve">
+        <value>Záložky</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkAboutApplication" xml:space="preserve">
+        <value>O aplikaci</value>
+    </data>
+    <data name="MainLayoutAppbarDrawerLinkSettings" xml:space="preserve">
+        <value>Nastavení</value>
+    </data>
+    <data name="MainLayoutAppbarDrawerLinkLogout" xml:space="preserve">
+        <value>Odhlásit se</value>
+    </data>
+    <data name="MainLayoutAppbarDrawerLinkAccount" xml:space="preserve">
+        <value>Účet</value>
+    </data>
+    <data name="LoginTitle" xml:space="preserve">
+        <value>Přihlásit se</value>
+    </data>
+    <data name="MainLayoutAppbarBrand" xml:space="preserve">
+        <value>ESLOZKA</value>
+    </data>
+    <data name="LoginRegisterButtonText" xml:space="preserve">
+        <value>Registrovat se</value>
+    </data>
+    <data name="LoginPasswordInputLabel" xml:space="preserve">
+        <value>Heslo</value>
+    </data>
+    <data name="LoginPasswordInputAdornmentArialLabel" xml:space="preserve">
+        <value>Zobrazit heslo</value>
+    </data>
+    <data name="LoginLoginButtonText" xml:space="preserve">
+        <value>Přihlásit se</value>
+    </data>
+    <data name="LoginEmailInputPlaceholder" xml:space="preserve">
+        <value>petr.novotny@centrum.cz</value>
+    </data>
+    <data name="LoginEmailInputLabel" xml:space="preserve">
+        <value>Emailová adresa</value>
+    </data>
+    <data name="MainLayoutSidebarDrawerLinkAccount" xml:space="preserve">
+        <value>Účet</value>
     </data>
 </root>

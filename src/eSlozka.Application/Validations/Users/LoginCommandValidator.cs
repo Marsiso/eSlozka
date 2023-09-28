@@ -1,24 +1,28 @@
 ﻿using eSlozka.Core.Commands.Users;
+using eSlozka.Domain.Enums;
 using FluentValidation;
+using Microsoft.Extensions.Localization;
 
 namespace eSlozka.Application.Validations.Users;
 
 public class LoginCommandValidator : AbstractValidator<VerifyCredentialsCommand>
 {
-    public LoginCommandValidator()
+    public LoginCommandValidator(IStringLocalizer localizer)
     {
         RuleFor(command => command.Email)
             .NotEmpty()
-            .WithMessage("ValidationUserEmailRequired")
+            .WithMessage(localizer[Translations.Validation.User.Email.Required])
             .MaximumLength(256)
-            .WithMessage("ValidationUserEmailMaxLength")
+            .WithMessage(localizer[Translations.Validation.User.Email.MaxLength])
             .EmailAddress()
-            .WithMessage("ValidationUserEmailInvalidFormat");
+            .WithMessage(localizer[Translations.Validation.User.Email.Format]);
 
         RuleFor(command => command.Password)
             .NotEmpty()
-            .WithMessage("ValidationUserPasswordRequired")
+            .WithMessage(localizer[Translations.Validation.User.Password.Required])
+            .MinimumLength(8)
+            .WithMessage(localizer[Translations.Validation.User.Password.MinLength])
             .MaximumLength(256)
-            .WithMessage("ValidationUserPasswordMaxLength");
+            .WithMessage(localizer[Translations.Validation.User.Password.MaxLength]);
     }
 }

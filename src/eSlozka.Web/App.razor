@@ -1,4 +1,5 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿@using eSlozka.Web.Shared.Authentication
+<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
         <AuthorizeRouteView DefaultLayout="@typeof(MainLayout)" RouteData="@routeData">
             <NotAuthorized>

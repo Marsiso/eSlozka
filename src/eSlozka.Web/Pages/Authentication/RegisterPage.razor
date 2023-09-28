@@ -1,31 +1,29 @@
 ﻿@attribute [Route(Routes.Authentication.Register)]
 @attribute [AllowAnonymous]
-@using Microsoft.Extensions.Localization
-@using eSlozka.Application.ViewModels
-@using Microsoft.AspNetCore.Authorization
-@inherits eSlozka.Application.ViewModels.PageComponentBase<eSlozka.Application.ViewModels.Authentication.RegisterPageViewModel>
+@using static Domain.Enums.Translations.Register
+@using eSlozka.Domain.Constants
+@inherits PageComponentBase<RegisterViewModel>
 
-@inject IStringLocalizer<App> Localizer
+@inject IStringLocalizer Localizer
 
 <MudBreakpointProvider>
     <MudHidden Breakpoint="Breakpoint.Xs" IsHiddenChanged="hidden => Model.HasMobileDeviceViewPortWidth = hidden">
     </MudHidden>
 </MudBreakpointProvider>
 
-<MudCard Style="@Model.GetComponentWidth()">
+<MudCard Class="pa-8" Style="@Model.GetComponentWidth()">
     <MudForm>
-        <MudCardMedia Image="img/space-rocket-background.svg"></MudCardMedia>
-        <MudCardHeader Class="px-8 pt-8">
-            <MudText Color="Color.Surface" Typo="Typo.h5">@Localizer["RegisterFormTitle"]</MudText>
+        <MudCardHeader>
+            <MudText Color="Color.Surface" Typo="Typo.h5">@Localizer[Title]</MudText>
         </MudCardHeader>
-        <MudCardContent Class="pa-8">
+        <MudCardContent>
             <MudTextField @bind-Value="Model.Form.GivenName"
                           For="@(() => Model.Form.GivenName)"
                           Immediate="true"
                           InputType="InputType.Text"
-                          Label="@Localizer["RegisterFormGivenNameInputLabel"]"
+                          Label="@Localizer[GivenNameInput.Label]"
                           MaxLength="256"
-                          Placeholder="Peter"
+                          Placeholder="@Localizer[GivenNameInput.Placeholder]"
                           DebounceInterval="500"
                           Error="@Model.HasError(nameof(Model.Form.GivenName))"
                           ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.GivenName))]"/>
@@ -34,9 +32,9 @@
                           For="@(() => Model.Form.FamilyName)"
                           Immediate="true"
                           InputType="InputType.Text"
-                          Label="@Localizer["RegisterFormFamilyNameInputLabel"]"
+                          Label="@Localizer[FamilyNameInput.Label]"
                           MaxLength="256"
-                          Placeholder="Novotný"
+                          Placeholder="@Localizer[FamilyNameInput.Placeholder]"
                           DebounceInterval="500"
                           Error="@Model.HasError(nameof(Model.Form.FamilyName))"
                           ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.FamilyName))]"/>
@@ -45,21 +43,21 @@
                           For="@(() => Model.Form.Email)"
                           Immediate="true"
                           InputType="InputType.Email"
-                          Label="@Localizer["RegisterFormEmailInputLabel"]"
+                          Label="@Localizer[EmailInput.Label]"
                           MaxLength="256"
-                          Placeholder="peter.novotny@centrum.cz"
+                          Placeholder="@Localizer[EmailInput.Placeholder]"
                           DebounceInterval="500"
                           Error="@Model.HasError(nameof(Model.Form.Email))"
                           ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.Email))]"/>
 
             <MudTextField Adornment="Adornment.End"
-                          AdornmentAriaLabel="@Localizer["RegisterFormPasswordInputShowPasswordAriaLabel"]"
+                          AdornmentAriaLabel="@Localizer[PasswordInput.AdornmentAriaLabel]"
                           AdornmentIcon="@Model.PasswordInputIcon"
                           @bind-Value="Model.Form.Password"
                           For="@(() => Model.Form.Password)"
                           Immediate="true"
                           InputType="@Model.PasswordInputType"
-                          Label="@Localizer["RegisterFormPasswordInputLabel"]"
+                          Label="@Localizer[PasswordInput.Label]"
                           MaxLength="256"
                           OnAdornmentClick="@Model.OnPasswordInputShowPasswordClick"
                           DebounceInterval="500"
@@ -67,23 +65,23 @@
                           ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.Password))]"/>
 
             <MudTextField Adornment="Adornment.End"
-                          AdornmentAriaLabel="@Localizer["RegisterFormPasswordRepeatInputShowPasswordAriaLabel"]"
+                          AdornmentAriaLabel="@Localizer[PasswordRepeatInput.AdornmentAriaLabel]"
                           AdornmentIcon="@Model.PasswordInputIcon"
                           @bind-Value="Model.Form.PasswordRepeat"
                           For="@(() => Model.Form.PasswordRepeat)"
                           Immediate="true"
                           InputType="@Model.PasswordRepeatInputType"
-                          Label="@Localizer["RegisterFormPasswordRepeatInputLabel"]"
+                          Label="@Localizer[PasswordRepeatInput.Label]"
                           MaxLength="256"
                           OnAdornmentClick="@Model.OnPasswordRepeatInputShowPasswordClick"
                           DebounceInterval="500"
                           Error="@Model.HasError(nameof(Model.Form.PasswordRepeat))"
                           ErrorText="@Localizer[Model.GetErrorText(nameof(Model.Form.PasswordRepeat))]"/>
         </MudCardContent>
-        <MudCardActions Class="px-8 pb-8">
+        <MudCardActions>
             <MudStack Class="flex flex-grow-1" Justify="Justify.FlexEnd" Row="true">
-                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Filled" OnClick="@Model.OnRegisterButtonClick">@Localizer["RegisterFormRegisterButton"]</MudButton>
-                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Text">@Localizer["RegisterFormLoginButton"]</MudButton>
+                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Filled" OnClick="@Model.OnRegisterButtonClick">@Localizer[RegisterButton.Text]</MudButton>
+                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Text" OnClick="@Model.OnLoginButtonClick">@Localizer[LoginButton.Text]</MudButton>
             </MudStack>
         </MudCardActions>
     </MudForm>
