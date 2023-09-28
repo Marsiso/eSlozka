@@ -1,15 +1,23 @@
 using System.ComponentModel;
+using eSlozka.Domain.DataTransferObjects.Sessions;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 
 namespace eSlozka.Application.ViewModels;
 
 public class PageLayoutComponentBase<TViewModel> : LayoutComponentBase, IDisposable where TViewModel : ViewModelBase
 {
     [Inject] public required TViewModel Model { get; set; }
+    [Inject] public required AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+    [Inject] public required ProtectedSessionStorage SessionStorage { get; set; }
+
+    public UserSession? Session { get; private set; }
 
     public void Dispose()
     {
         Model.PropertyChanged -= OnModelPropertyChanged;
+        AuthenticationStateProvider.AuthenticationStateChanged -= OnAuthenticationStateChanged;
 
         GC.SuppressFinalize(this);
     }
@@ -19,16 +27,23 @@ public class PageLayoutComponentBase<TViewModel> : LayoutComponentBase, IDisposa
         return Body;
     }
 
+    private async void OnAuthenticationStateChanged(Task<AuthenticationState> authenticationStateTask)
+    {
+        var sessionStorageResult = await SessionStorage.GetAsync<UserSession>(nameof(UserSession));
+        Session = sessionStorageResult.Value;
+    }
+
     protected override bool ShouldRender()
     {
         return !Model.Busy;
     }
 
-    protected override Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
         Model.PropertyChanged += OnModelPropertyChanged;
+        AuthenticationStateProvider.AuthenticationStateChanged += OnAuthenticationStateChanged;
 
-        return Model.OnViewModelInitialized();
+        await Model.OnViewModelInitialized();
     }
 
     protected override Task OnParametersSetAsync()

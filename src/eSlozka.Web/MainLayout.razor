@@ -20,8 +20,8 @@
                         <MudAvatar Rounded="true" Variant="Variant.Text"/>
                     </ActivatorContent>
                     <ChildContent>
-                        <MudMenuItem Disabled="true" Icon="@Icons.Material.Filled.Person3">FirstName LastName</MudMenuItem>
-                        <MudMenuItem Disabled="true" Icon="@Icons.Material.Filled.Email">fistname.lastname@example.com</MudMenuItem>
+                        <MudMenuItem Disabled="true" Icon="@Icons.Material.Filled.Person3">@Session?.GivenName @Session?.FamilyName</MudMenuItem>
+                        <MudMenuItem Disabled="true" Icon="@Icons.Material.Filled.Email">@Session?.Email</MudMenuItem>
                         <MudMenuItem Icon="@Icons.Material.Filled.AccountBox">@Localizer[Appbar.Drawer.Link.Account]</MudMenuItem>
                         <MudMenuItem Icon="@Icons.Material.Filled.Settings">@Localizer[Appbar.Drawer.Link.Settings]</MudMenuItem>
                         <MudMenuItem Icon="@Icons.Material.Filled.Logout">@Localizer[Appbar.Drawer.Link.Logout]</MudMenuItem>
