@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace eSlozka.Application.ViewModels;
 
-public class ViewModelBase : IDisposable
+public class ViewModelBase
 {
     public delegate Task ViewModelAfterRenderHandler();
 
@@ -11,17 +11,12 @@ public class ViewModelBase : IDisposable
 
     public delegate Task ViewModelParametersSetHandler();
 
-    private bool busy;
+    private bool _busy;
 
     public bool Busy
     {
-        get => busy;
-        set => SetValue(ref busy, value);
-    }
-
-    public void Dispose()
-    {
-        GC.SuppressFinalize(this);
+        get => _busy;
+        set => SetValue(ref _busy, value);
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;

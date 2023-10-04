@@ -14,12 +14,12 @@ public class PermissionAuthorizeAttribute : AuthorizeAttribute
     {
     }
 
-    public PermissionAuthorizeAttribute(Permission permission)
+    public PermissionAuthorizeAttribute(Permission permissions)
     {
-        Permission = permission;
+        Permissions = permissions;
     }
 
-    public Permission Permission
+    public Permission Permissions
     {
         get => !string.IsNullOrWhiteSpace(Policy) ? PolicyNameHelpers.GetPermissionsFrom(Policy) : Permission.None;
         set => Policy = value != Permission.None ? PolicyNameHelpers.GetPolicyNameFor(value) : string.Empty;

@@ -1,9 +1,7 @@
 ﻿@attribute [Route(Routes.Authentication.Register)]
 @attribute [AllowAnonymous]
-@using static Domain.Constants.Translations.Register
-@using eSlozka.Domain.Constants
 @inherits PageComponentBase<RegisterViewModel>
-
+@using static Domain.Constants.Translations.Register
 @inject IStringLocalizer Localizer
 
 <MudBreakpointProvider>
@@ -14,7 +12,7 @@
 <MudCard Class="pa-8" Style="@Model.GetComponentWidth()">
     <MudForm Model="Model.Form">
         <MudCardHeader>
-            <MudText Color="Color.Surface" Typo="Typo.h5">@Localizer[Title]</MudText>
+            <MudText Color="Color.Inherit" Typo="Typo.h5">@Localizer[Title]</MudText>
         </MudCardHeader>
         <MudCardContent>
             <MudTextField @bind-Value="Model.Form.GivenName"

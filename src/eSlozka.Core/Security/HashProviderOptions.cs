@@ -1,4 +1,4 @@
-﻿namespace eSlozka.Core.Utilities;
+﻿namespace eSlozka.Core.Security;
 
 public class HashProviderOptions
 {

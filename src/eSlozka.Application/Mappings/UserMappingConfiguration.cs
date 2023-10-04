@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using eSlozka.Core.Commands.Users;
-using eSlozka.Domain.DataTransferObjects.Forms;
-using eSlozka.Domain.DataTransferObjects.Sessions;
+using eSlozka.Domain.DataTransferObjects.Users;
 using eSlozka.Domain.Models;
 
 namespace eSlozka.Application.Mappings;
@@ -25,8 +24,8 @@ public class UserMappingConfiguration : Profile
             .ReverseMap()
             .ForMember(member => member.Password, options => options.Ignore());
 
-        CreateMap<RegisterForm, RegisterCommand>().ReverseMap();
-        CreateMap<LoginForm, VerifyCredentialsCommand>().ReverseMap();
-        CreateMap<User, UserSession>();
+        CreateMap<RegisterInput, RegisterCommand>().ReverseMap();
+        CreateMap<LoginInput, VerifyCredentialsCommand>().ReverseMap();
+        CreateMap<User, SessionProperties>();
     }
 }

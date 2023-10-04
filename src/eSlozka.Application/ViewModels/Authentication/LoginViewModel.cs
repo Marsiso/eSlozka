@@ -2,8 +2,7 @@
 using eSlozka.Application.Authentication;
 using eSlozka.Core.Commands.Users;
 using eSlozka.Domain.Constants;
-using eSlozka.Domain.DataTransferObjects.Forms;
-using eSlozka.Domain.DataTransferObjects.Sessions;
+using eSlozka.Domain.DataTransferObjects.Users;
 using eSlozka.Domain.Enums;
 using eSlozka.Domain.Exceptions;
 using MediatR;
@@ -20,7 +19,7 @@ public class LoginViewModel : ViewModelBase
     private readonly NavigationManager _navigation;
     private readonly ISender _sender;
 
-    private LoginForm _form = new();
+    private LoginInput _form = new();
     private bool _hasMobileDeviceViewPortWidth;
     private string _passwordInputIcon = Icons.Material.Filled.VisibilityOff;
     private bool _passwordInputShowPassword;
@@ -35,7 +34,7 @@ public class LoginViewModel : ViewModelBase
         _authenticationStateProvider = authenticationStateProvider;
     }
 
-    public LoginForm Form
+    public LoginInput Form
     {
         get => _form;
         set => SetValue(ref _form, value);
@@ -99,7 +98,7 @@ public class LoginViewModel : ViewModelBase
 
         if (_authenticationStateProvider is RevalidatingAuthenticationStateProvider revalidatingAuthenticationStateProvider && result.Result == VerifyCredentialsResultType.Succeeded)
         {
-            var userSession = _mapper.Map<UserSession>(result.User);
+            var userSession = _mapper.Map<SessionProperties>(result.User);
 
             userSession.Permissions = result.User?.Roles
                 ?.Select(role => role.Role?.Permission)

@@ -5,9 +5,9 @@ using Microsoft.Extensions.Localization;
 
 namespace eSlozka.Application.Validations.Users;
 
-public class LoginCommandValidator : AbstractValidator<VerifyCredentialsCommand>
+public class VerifyCredentialCommandValidator : AbstractValidator<VerifyCredentialsCommand>
 {
-    public LoginCommandValidator(IStringLocalizer localizer)
+    public VerifyCredentialCommandValidator(IStringLocalizer localizer)
     {
         RuleFor(command => command.Email)
             .NotEmpty()

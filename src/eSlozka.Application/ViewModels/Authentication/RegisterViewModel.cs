@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using eSlozka.Core.Commands.Users;
 using eSlozka.Domain.Constants;
-using eSlozka.Domain.DataTransferObjects.Forms;
+using eSlozka.Domain.DataTransferObjects.Users;
 using eSlozka.Domain.Exceptions;
 using MediatR;
 using Microsoft.AspNetCore.Components;
@@ -15,7 +15,7 @@ public class RegisterViewModel : ViewModelBase
     private readonly NavigationManager _navigation;
     private readonly ISender _sender;
 
-    private RegisterForm _form = new();
+    private RegisterInput _form = new();
 
     private bool _hasMobileDeviceViewPortWidth;
     private string _passwordInputIcon = Icons.Material.Filled.VisibilityOff;
@@ -33,7 +33,7 @@ public class RegisterViewModel : ViewModelBase
         _mapper = mapper;
     }
 
-    public RegisterForm Form
+    public RegisterInput Form
     {
         get => _form;
         set => SetValue(ref _form, value);

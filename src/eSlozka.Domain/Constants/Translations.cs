@@ -47,6 +47,7 @@ public static class Translations
                     public const string Deleted = LinkBase + nameof(Deleted);
                     public const string Notifications = LinkBase + nameof(Notifications);
                     public const string ManageUsers = LinkBase + nameof(ManageUsers);
+                    public const string ManageRoles = LinkBase + nameof(ManageRoles);
                     public const string ManageRepository = LinkBase + nameof(ManageRepository);
                     public const string ManageCodeLists = LinkBase + nameof(ManageCodeLists);
                     public const string ManageTasks = LinkBase + nameof(ManageTasks);

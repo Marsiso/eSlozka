@@ -1,6 +1,6 @@
 using System.ComponentModel;
 using eSlozka.Application.Authentication;
-using eSlozka.Domain.DataTransferObjects.Sessions;
+using eSlozka.Domain.DataTransferObjects.Users;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
@@ -13,7 +13,7 @@ public class PageLayoutComponentBase<TViewModel> : LayoutComponentBase, IDisposa
     [Inject] public required AuthenticationStateProvider AuthenticationStateProvider { get; set; }
     [Inject] public required ProtectedSessionStorage SessionStorage { get; set; }
 
-    public UserSession? Session { get; private set; }
+    public SessionProperties? Session { get; private set; }
 
     public void Dispose()
     {
@@ -35,7 +35,7 @@ public class PageLayoutComponentBase<TViewModel> : LayoutComponentBase, IDisposa
 
     private async void OnAuthenticationStateChanged(Task<AuthenticationState> authenticationStateTask)
     {
-        var sessionStorageResult = await SessionStorage.GetAsync<UserSession>(nameof(UserSession));
+        var sessionStorageResult = await SessionStorage.GetAsync<SessionProperties>(nameof(SessionProperties));
         Session = sessionStorageResult.Value;
     }
 

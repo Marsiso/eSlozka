@@ -1,8 +1,8 @@
 ﻿using eSlozka.Domain.Enums;
 
-namespace eSlozka.Domain.DataTransferObjects.Sessions;
+namespace eSlozka.Domain.DataTransferObjects.Users;
 
-public class UserSession
+public class SessionProperties
 {
     public string ProtectedUserID { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;

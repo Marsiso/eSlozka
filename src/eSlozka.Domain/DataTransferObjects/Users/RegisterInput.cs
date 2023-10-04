@@ -1,6 +1,6 @@
-﻿namespace eSlozka.Domain.DataTransferObjects.Forms;
+﻿namespace eSlozka.Domain.DataTransferObjects.Users;
 
-public class RegisterForm
+public class RegisterInput
 {
     public string? GivenName { get; set; }
     public string? FamilyName { get; set; }

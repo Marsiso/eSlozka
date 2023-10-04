@@ -4,7 +4,7 @@ using eSlozka.Domain.Enums;
 using eSlozka.Domain.Services;
 using Microsoft.Extensions.Options;
 
-namespace eSlozka.Core.Utilities;
+namespace eSlozka.Core.Security;
 
 public class HashProvider : IHashProvider
 {

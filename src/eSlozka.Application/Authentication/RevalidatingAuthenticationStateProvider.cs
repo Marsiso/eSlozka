@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 using eSlozka.Domain.Constants;
-using eSlozka.Domain.DataTransferObjects.Sessions;
+using eSlozka.Domain.DataTransferObjects.Users;
 using eSlozka.Domain.Helpers;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
@@ -26,24 +26,24 @@ public class RevalidatingAuthenticationStateProvider : AuthenticationStateProvid
     {
         try
         {
-            var sessionStorageResult = await _sessionStorage.GetAsync<UserSession>(nameof(UserSession));
+            var sessionStorageResult = await _sessionStorage.GetAsync<SessionProperties>(nameof(SessionProperties));
 
             if (sessionStorageResult is not { Success: true, Value: not null }) return await Task.FromResult(new AuthenticationState(_anonymous));
 
-            var userSession = sessionStorageResult.Value;
+            var sessionProperties = sessionStorageResult.Value;
 
             var claims = new List<Claim>
             {
-                new(UserClaimTypes.ProtectedIdentifier, userSession.ProtectedUserID),
-                new(UserClaimTypes.GivenName, userSession.GivenName),
-                new(UserClaimTypes.FamilyName, userSession.FamilyName),
-                new(UserClaimTypes.Email, userSession.Email),
-                new(UserClaimTypes.EmailConfirmed, userSession.EmailConfirmed.ToString()),
-                new(UserClaimTypes.DarkThemeEnabled, userSession.DarkThemeEnabled.ToString()),
-                new(UserClaimTypes.Permissions, PolicyNameHelpers.GetPolicyNameFor(userSession.Permissions))
+                new(UserClaimTypes.ProtectedIdentifier, sessionProperties.ProtectedUserID),
+                new(UserClaimTypes.GivenName, sessionProperties.GivenName),
+                new(UserClaimTypes.FamilyName, sessionProperties.FamilyName),
+                new(UserClaimTypes.Email, sessionProperties.Email),
+                new(UserClaimTypes.EmailConfirmed, sessionProperties.EmailConfirmed.ToString()),
+                new(UserClaimTypes.DarkThemeEnabled, sessionProperties.DarkThemeEnabled.ToString()),
+                new(UserClaimTypes.Permissions, PolicyNameHelpers.GetPolicyNameFor(sessionProperties.Permissions))
             };
 
-            if (!string.IsNullOrWhiteSpace(userSession.ProfilePhoto)) claims.Add(new Claim(UserClaimTypes.ProfilePhoto, userSession.ProfilePhoto));
+            if (!string.IsNullOrWhiteSpace(sessionProperties.ProfilePhoto)) claims.Add(new Claim(UserClaimTypes.ProfilePhoto, sessionProperties.ProfilePhoto));
 
             var claimsIdentity = new ClaimsIdentity(claims, AuthenticationType);
             var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
@@ -58,25 +58,25 @@ public class RevalidatingAuthenticationStateProvider : AuthenticationStateProvid
         }
     }
 
-    public async Task UpdateAuthenticationState(UserSession? userSession)
+    public async Task UpdateAuthenticationState(SessionProperties? sessionProperties)
     {
         AuthenticationState authenticationState;
-        if (userSession is not null)
+        if (sessionProperties is not null)
         {
-            await _sessionStorage.SetAsync(nameof(UserSession), userSession);
+            await _sessionStorage.SetAsync(nameof(SessionProperties), sessionProperties);
 
             var claims = new List<Claim>
             {
-                new(UserClaimTypes.ProtectedIdentifier, userSession.ProtectedUserID),
-                new(UserClaimTypes.GivenName, userSession.GivenName),
-                new(UserClaimTypes.FamilyName, userSession.FamilyName),
-                new(UserClaimTypes.Email, userSession.Email),
-                new(UserClaimTypes.EmailConfirmed, userSession.EmailConfirmed.ToString()),
-                new(UserClaimTypes.DarkThemeEnabled, userSession.DarkThemeEnabled.ToString()),
-                new(UserClaimTypes.Permissions, PolicyNameHelpers.GetPolicyNameFor(userSession.Permissions))
+                new(UserClaimTypes.ProtectedIdentifier, sessionProperties.ProtectedUserID),
+                new(UserClaimTypes.GivenName, sessionProperties.GivenName),
+                new(UserClaimTypes.FamilyName, sessionProperties.FamilyName),
+                new(UserClaimTypes.Email, sessionProperties.Email),
+                new(UserClaimTypes.EmailConfirmed, sessionProperties.EmailConfirmed.ToString()),
+                new(UserClaimTypes.DarkThemeEnabled, sessionProperties.DarkThemeEnabled.ToString()),
+                new(UserClaimTypes.Permissions, PolicyNameHelpers.GetPolicyNameFor(sessionProperties.Permissions))
             };
 
-            if (!string.IsNullOrWhiteSpace(userSession.ProfilePhoto)) claims.Add(new Claim(UserClaimTypes.ProfilePhoto, userSession.ProfilePhoto));
+            if (!string.IsNullOrWhiteSpace(sessionProperties.ProfilePhoto)) claims.Add(new Claim(UserClaimTypes.ProfilePhoto, sessionProperties.ProfilePhoto));
 
             var claimsIdentity = new ClaimsIdentity(claims, AuthenticationType);
             var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
@@ -85,7 +85,7 @@ public class RevalidatingAuthenticationStateProvider : AuthenticationStateProvid
         }
         else
         {
-            await _sessionStorage.DeleteAsync(nameof(UserSession));
+            await _sessionStorage.DeleteAsync(nameof(SessionProperties));
 
             authenticationState = new AuthenticationState(_anonymous);
         }

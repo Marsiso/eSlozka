@@ -2,7 +2,7 @@
 using eSlozka.Application.Validations.Users;
 using eSlozka.Application.ViewModels;
 using eSlozka.Core.Commands.Users;
-using eSlozka.Core.Utilities;
+using eSlozka.Core.Security;
 using eSlozka.Data;
 using eSlozka.Domain.Constants;
 using eSlozka.Domain.Enums;
@@ -146,8 +146,7 @@ public static class ConfigurationExtensions
             FamilyName = "Administrator",
             Email = "system.administrator@provider.dev",
             EmailConfirmed = true,
-            Locale = Locales.Default,
-            DarkThemeEnabled = false
+            Locale = Locales.Default
         };
 
         (administrator.Password, administrator.PasswordSalt) = hasher.GetHash("Password123$");
@@ -160,8 +159,7 @@ public static class ConfigurationExtensions
             FamilyName = "Manager",
             Email = "system.manager@provider.dev",
             EmailConfirmed = true,
-            Locale = Locales.Default,
-            DarkThemeEnabled = false
+            Locale = Locales.Default
         };
 
         (manager.Password, manager.PasswordSalt) = hasher.GetHash("Password123$");

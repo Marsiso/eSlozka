@@ -249,6 +249,15 @@ namespace eSlozka.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Spravovat role.
+        /// </summary>
+        internal static string MainLayoutSidebarDrawerLinkManageRoles {
+            get {
+                return ResourceManager.GetString("MainLayoutSidebarDrawerLinkManageRoles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Statistika.
         /// </summary>
         internal static string MainLayoutSidebarDrawerLinkManageStatistics {

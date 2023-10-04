@@ -3,16 +3,13 @@ using Microsoft.AspNetCore.Components;
 
 namespace eSlozka.Application.ViewModels;
 
-public class PageComponentBase<TViewModel> : ComponentBase, IDisposable where TViewModel : ViewModelBase
+public class PageComponentBase<TViewModel> : ComponentBase where TViewModel : ViewModelBase
 {
     [Inject] public required TViewModel Model { get; set; }
 
-    public void Dispose()
+    public void Deconstruct()
     {
         Model.PropertyChanged -= OnModelPropertyChanged;
-        Model.Dispose();
-
-        GC.SuppressFinalize(this);
     }
 
     protected override bool ShouldRender()

@@ -1,9 +1,7 @@
 ﻿@attribute [Route(Routes.Authentication.Login)]
 @attribute [AllowAnonymous]
 @using static Domain.Constants.Translations.Login
-@using eSlozka.Domain.Constants
 @inherits PageComponentBase<LoginViewModel>
-
 @inject IStringLocalizer<App> Localizer
 
 <MudBreakpointProvider>
@@ -14,7 +12,7 @@
 <MudCard Class="pa-8" Style="@Model.GetComponentWidth()">
     <MudForm ValidationDelay="1000">
         <MudCardHeader>
-            <MudText Color="Color.Surface" Typo="Typo.h5">@Localizer[Title]</MudText>
+            <MudText Color="Color.Inherit" Typo="Typo.h5">@Localizer[Title]</MudText>
         </MudCardHeader>
         <MudCardContent>
             <MudTextField @bind-Value="Model.Form.Email"

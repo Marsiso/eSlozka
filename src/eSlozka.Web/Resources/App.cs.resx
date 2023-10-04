@@ -195,4 +195,7 @@
     <data name="ValidationUserEmailExists" xml:space="preserve">
         <value>Hodnota pole 'Emailová adresa' je již zabraná.</value>
     </data>
+    <data name="MainLayoutSidebarDrawerLinkManageRoles" xml:space="preserve">
+        <value>Spravovat role</value>
+    </data>
 </root>

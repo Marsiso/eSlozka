@@ -1,6 +1,6 @@
-﻿namespace eSlozka.Domain.DataTransferObjects.Forms;
+﻿namespace eSlozka.Domain.DataTransferObjects.Users;
 
-public class LoginForm
+public class LoginInput
 {
     public string? Email { get; set; }
     public string? Password { get; set; }

@@ -11,9 +11,9 @@ public static class PolicyNameHelpers
         return !string.IsNullOrWhiteSpace(policyName) && policyName.StartsWith(Prefix, StringComparison.OrdinalIgnoreCase);
     }
 
-    public static string GetPolicyNameFor(Permission permission)
+    public static string GetPolicyNameFor(Permission permissions)
     {
-        return $"{Prefix}{(int)permission}";
+        return $"{Prefix}{(int)permissions}";
     }
 
     public static Permission GetPermissionsFrom(string? policyName)

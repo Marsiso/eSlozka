@@ -1,0 +1,22 @@
+﻿@attribute [PermissionAuthorize(Permission.ViewRoles | Permission.EditRoles)]
+@attribute [Route(Routes.Management.Roles)]
+@using eSlozka.Domain.Helpers
+@inherits PageComponentBase<RolesViewModel>
+@inject IStringLocalizer Localizer
+
+<MudBreadcrumbs Items="@Model.BreadCrumbData"/>
+
+<div class="pa-4">
+    <MudText Typo="Typo.h4">Manage roles</MudText>
+
+    <MudDataGrid Items="@Model.Roles" Class="mt-4" Filterable="true" Hideable="true" Groupable="true" GroupExpanded="false">
+        <Columns>
+            <PropertyColumn Property="role => role.Name" Title="Name" StickyLeft="true"/>
+            @foreach (var permission in PermissionHelpers.GetAll())
+            {
+                <PropertyColumn Property="role => ((int)role.Permission & (int)permission) > 0" Title="@permission.ToString()">
+                </PropertyColumn>
+            }
+        </Columns>
+    </MudDataGrid>
+</div>

@@ -13,5 +13,5 @@ public enum Permission
     ViewCodeLists = 64,
     EditCodeLists = 128,
     ShareFiles = 256,
-    All = ~0
+    All = ViewRoles | EditRoles | ViewUsers | EditUsers | ViewFiles | EditFiles | ViewCodeLists | EditCodeLists | ShareFiles
 }
